@@ -40,9 +40,10 @@
 
         function buy() {
             var boughtItems = {};
-            $('#tbl tr').each(function() {
+            $('#tbl #rw').each(function() {
 
-                var id = trim($(this).find("#prodId").html());
+                var id = $.trim($(this).find("#prodId").html());
+
                 var qty = $(this).find("#qty").val();
 
                 if(id && qty)
