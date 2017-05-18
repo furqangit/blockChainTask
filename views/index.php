@@ -29,6 +29,12 @@
                 data: data_json,
                 success: function (result) {
                     console.log(result);
+                    setTimeout(
+                        function()
+                        {
+                            //do something special
+                        }, 5000);
+                    getItems();
                 },
                 error: function(error)
                 {
@@ -36,10 +42,71 @@
                 }
 
             });
+
+
         });
 
+        function getItems(){
+
+            var request = {
+                "jsonrpc":"2.0",
+                "method":"query",
+                "params":{
+                    "type":1,
+                    "chaincodeID": {
+                            "name":"ff7c0eb73853755c85ca5af7f1ced1e4f90cdec0c0670f3d7be005e62c49d9dbdb40c9b330aacfd594b921c5d120dab606d9ee60aa808a78158aea1389eb527f"
+                        },
+                    "ctorMsg":{
+                        "function":"read",
+                        "args":["viktor"]
+                    },
+                    "secureContext":"list"
+                },
+                "id":2
+            };
+
+            var request =  {
+                "jsonrpc": "2.0",
+                "method": "query",
+                "params": {
+                    "type": 1,
+                    "chaincodeID": {
+                        "name": "ff7c0eb73853755c85ca5af7f1ced1e4f90cdec0c0670f3d7be005e62c49d9dbdb40c9b330aacfd594b921c5d120dab606d9ee60aa808a78158aea1389eb527f"
+                    },
+                    "ctorMsg": {
+                        "function": "list",
+                        "args": [
+                            "viktor"
+                        ]
+                    },
+                    "secureContext": "admin"
+                },
+                "id": 2
+            };
+
+            var json_request = JSON.stringify(request);
+
+
+            $.ajax({
+                url: "https://bf2ecd302ef6404abcf3ad797a0eefaa-vp0.us.blockchain.ibm.com:5002/registrar",
+                async:true,
+                type: 'post',
+                dataType: 'json',
+                data: json_request,
+                success: function (result) {
+                    console.log(result);
+                },
+                error: function(error)
+                {
+                    console.log(error.statusText);
+                }
+
+            });
+        }
+
         function buy() {
-            var boughtItems = {};
+            var boughtItems = [];
+            var items;
             $('#tbl #rw').each(function() {
 
                 var id = $.trim($(this).find("#prodId").html());
@@ -48,12 +115,11 @@
 
                 if(id && qty)
                 {
-                    boughtItems = {
-                        id:id,
-                        qty:qty};
+                    item = [id,qty];
                 }
-                console.log(boughtItems);
+                boughtItems.push(item);
             });
+            console.log(boughtItems);
         }
 
     </script>
