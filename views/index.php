@@ -23,113 +23,9 @@
       <script type="text/javascript" src="js/fit/fit.js"></script>
     <script type="text/javascript" src="./scripts/jquery.min.js"></script>
     <script>
-        $(document).ready(function() {
-
-            var data = {
-                "enrollId" : "admin",
-                "enrollSecret" : "19ad565b93"
-            };
-            var data_json = JSON.stringify(data);
-
-            $.ajax({
-                url: "https://bf2ecd302ef6404abcf3ad797a0eefaa-vp0.us.blockchain.ibm.com:5002/registrar",
-                type: 'post',
-                dataType: 'json',
-                data: data_json,
-                success: function (result) {
-                    console.log(result);
-                    setTimeout(
-                        function()
-                        {
-                            //do something special
-                        }, 5000);
-                    getItems();
-                },
-                error: function(error)
-                {
-                    alert("Unable to connect to chain code!");
-                }
-
-            });
 
 
-        });
 
-        function getItems(){
-
-            var request = {
-                "jsonrpc":"2.0",
-                "method":"query",
-                "params":{
-                    "type":1,
-                    "chaincodeID": {
-                            "name":"ff7c0eb73853755c85ca5af7f1ced1e4f90cdec0c0670f3d7be005e62c49d9dbdb40c9b330aacfd594b921c5d120dab606d9ee60aa808a78158aea1389eb527f"
-                        },
-                    "ctorMsg":{
-                        "function":"read",
-                        "args":["viktor"]
-                    },
-                    "secureContext":"list"
-                },
-                "id":2
-            };
-
-            var request =  {
-                "jsonrpc": "2.0",
-                "method": "query",
-                "params": {
-                    "type": 1,
-                    "chaincodeID": {
-                        "name": "ff7c0eb73853755c85ca5af7f1ced1e4f90cdec0c0670f3d7be005e62c49d9dbdb40c9b330aacfd594b921c5d120dab606d9ee60aa808a78158aea1389eb527f"
-                    },
-                    "ctorMsg": {
-                        "function": "list",
-                        "args": [
-                            "viktor"
-                        ]
-                    },
-                    "secureContext": "admin"
-                },
-                "id": 2
-            };
-
-            var json_request = JSON.stringify(request);
-
-
-            $.ajax({
-                url: "https://bf2ecd302ef6404abcf3ad797a0eefaa-vp0.us.blockchain.ibm.com:5002/registrar",
-                async:true,
-                type: 'post',
-                dataType: 'json',
-                data: json_request,
-                success: function (result) {
-                    console.log(result);
-                },
-                error: function(error)
-                {
-                    console.log(error.statusText);
-                }
-
-            });
-        }
-
-        function buy() {
-            var boughtItems = [];
-            var items;
-            $('#tbl #rw').each(function() {
-
-                var id = $.trim($(this).find("#prodId").html());
-
-                var qty = $(this).find("#qty").val();
-
-                if(id && qty)
-                {
-                    item = [id,qty];
-                }
-                boughtItems.push(item);
-            });
-            console.log(boughtItems);
-        }
 
     </script>
    </head>
@@ -142,7 +38,7 @@
                <img src="images/fraunhofer.jpg" class="img-responsive">
             </div>
             <div class="col-sm-6">
-               <h1>Blockchain Web-Interface for FIT Coin</h1>
+               <h1>Blockchain Web-Interface</h1>
             </div>
             <div class="col-sm-3"></div>
          </div>
@@ -158,7 +54,7 @@
                   <div class="input-group">
                      <span class="input-group-addon"><strong>Your Balance : </strong></span>
                      <div class="form-control" style="text-align:right;">
-						<strong>90</strong>
+						<strong id="bal">90</strong>
 					 </div>
                      <span class="input-group-addon"><strong>$</strong></span>
                   </div>
@@ -166,15 +62,15 @@
                   <p>Purchased Products</p>
                   <div class="bs-example">
                      <table class="table table-bordered table-hover">
-                        <thead>
-                           <tr>
-                              <th>ID</th>
-                              <th>Item</th>
-                              <th>Price ($)</th>
-							  <th>Quantity</th>
-                           </tr>
-                        </thead>
-                        <tbody>
+                         <thead>
+                         <tr>
+                             <th>ID</th>
+                             <th>Item</th>
+                             <th>Price ($)</th>
+                             <th>Quantity</th>
+                         </tr>
+                         </thead>
+                        <tbody id="tbl2">
 							<!-- 
 								Filled from json js function
 							-->
@@ -197,25 +93,36 @@
 						  <th>ID</th>
 						  <th>Item</th>
 						  <th>Price ($)</th>
-						  <th>Owner</th>
 						  <th>Quantity</th>
 					   </tr>
 					</thead>
-					<tbody>
+					<tbody id="tbl">
 						<!-- 
 						Filled from json js function
 						-->
 					</tbody>
 				 </table>
 			  </div>
-			  <button type="button" onclick="javascript:alertFunc();" class="btn btn-primary pull-right"><span class="glyphicon glyphicon-shopping-cart"></span> Buy </button>
-			  &nbsp;
+                   &nbsp;
 			  <!-- Main end -->
+               <form>
+                   <div class="form-group">
+                       <label for="itm">Item ID:</label>
+                       <input type="text" class="form-control" id="itm">
+                   </div>
+                   <div class="form-group">
+                       <label for="qty">Quantity:</label>
+                       <input type="text" class="form-control" id="qty">
+                   </div>
+                   <button type="button" onclick="buy()" class="btn btn-primary pull-right"><span class="glyphicon glyphicon-shopping-cart"></span> Buy </button>
+               </form>
 		   </div>
 		</div>
 			<!-- Right end -->
          </div>
       </div>
+
+
       <!-- Middle end -->
 <!-- Footer -->
   <div class="navbar navbar-default navbar-fixed-bottom">

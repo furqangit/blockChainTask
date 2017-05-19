@@ -3,57 +3,303 @@ function alertFunc() {
 }
 
 $(document).ready(function() {
-	// get list of available items from json
-	// example json string
-	var json_string = '{"purchased":[{"id": "1", "name": "table", "price": "80", "quantity": "5", "owner": "furqan"},{"id": "2", "name": "chair", "price": "30", "quantity": "8", "owner": "viktor"}]}';
-	var list = JSON.parse(json_string);
 
-	for (var i = 0; i < list.purchased.length; i++) {
-		var purchased_item = list.purchased[i];
-		$("#buy .jumbotron .table").find('tbody')
-			.append($('<tr>')
-				.append($('<td>')
-					.text(purchased_item.id)
-				)
-				.append($('<td>')
-					.text(purchased_item.name)
-				)
-				.append($('<td>')
-					.text(purchased_item.price)
-				)
-				.append($('<td>')
-					.text(purchased_item.owner)
-				)
-				.append($('<td class="col-md-2">')
-					.append($('<textarea class="form-control" rows="1" style="resize: none;">')
-						.text(purchased_item.quantity)
-					)
-				)
-			);
-	};
-	
-	// get history of purcased items from json
-	// example json string
-	var json_string = '{ "purchased":[ { "id":"7", "name":"fan", "price":"33", "quantity":"32" }, { "id":"5", "name":"tablet", "price":"130", "quantity":"25" } ] }';
-	var list = JSON.parse(json_string);
+    var data = {
+        "enrollId" : "admin",
+        "enrollSecret" : "19ad565b93"
+    };
+    var data_json = JSON.stringify(data);
 
-	for (var i = 0; i < list.purchased.length; i++) {
-		var purchased_item = list.purchased[i];
-		$("#purchased .jumbotron .table").find('tbody')
-			.append($('<tr>')
-				.append($('<td>')
-					.text(purchased_item.id)
-				)
-				.append($('<td>')
-					.text(purchased_item.name)
-				)
-				.append($('<td>')
-					.text(purchased_item.price)
-				)
-				.append($('<td>')
-					.text(purchased_item.quantity)
-				)
-			);
-	};
+    $.ajax({
+        url: "https://bf2ecd302ef6404abcf3ad797a0eefaa-vp0.us.blockchain.ibm.com:5002/registrar",
+        type: 'post',
+        dataType: 'json',
+        data: data_json,
+        success: function (result) {
+            console.log(result);
+            reset();
+            getItems();
+            getBalance();
+        },
+        error: function(error)
+        {
+            alert("Unable to connect to chain code!");
+        }
+
+    });
+
 
 });
+
+function reset() {
+    var data = {
+        "jsonrpc": "2.0",
+        "method": "invoke",
+        "params": {
+            "type": 1,
+            "chaincodeID": {
+                "name": "ff7c0eb73853755c85ca5af7f1ced1e4f90cdec0c0670f3d7be005e62c49d9dbdb40c9b330aacfd594b921c5d120dab606d9ee60aa808a78158aea1389eb527f"
+            },
+            "ctorMsg": {
+                "function": "init",
+                "args": ["init"]
+            },
+            "secureContext": "admin"
+        },
+        "id": 3
+    };
+
+    var data_json = JSON.stringify(data);
+
+    $.ajax({
+        url: "https://bf2ecd302ef6404abcf3ad797a0eefaa-vp0.us.blockchain.ibm.com:5002/chaincode",
+        type: 'post',
+        dataType: 'json',
+        data: data_json,
+        success: function (result) {
+            if(result.result.status == "OK")
+            {
+                console.log("initializing");
+            }
+        },
+        error: function(error)
+        {
+            alert("Connection LOST!");
+        }
+
+    });
+}
+
+function getItems(){
+    var result_data = null;
+    var request =  {
+        "jsonrpc": "2.0",
+        "method": "query",
+        "params": {
+            "type": 1,
+            "chaincodeID": {
+                "name": "ff7c0eb73853755c85ca5af7f1ced1e4f90cdec0c0670f3d7be005e62c49d9dbdb40c9b330aacfd594b921c5d120dab606d9ee60aa808a78158aea1389eb527f"
+            },
+            "ctorMsg": {
+                "function": "list",
+                "args": [
+                    "viktor"
+                ]
+            },
+            "secureContext": "admin"
+        },
+        "id": 2
+    };
+    var json_request = JSON.stringify(request);
+
+
+    $.ajax({
+        url: "https://bf2ecd302ef6404abcf3ad797a0eefaa-vp0.us.blockchain.ibm.com:5002/chaincode",
+        async:true,
+        type: 'post',
+        dataType: 'json',
+        data: json_request,
+        success: function (result) {
+            result_data = JSON.stringify(result.result.message);
+            result_data =  result_data.replace(/\"{/g, "{");
+            result_data =  result_data.replace(/}\\"/g, "}");
+            result_data =  result_data.replace(/\"\[/g, "[");
+            result_data =  result_data.replace(/\]\"/g, "]");
+            result_data =  result_data.replace(/\\/g, "");
+
+            $result_data = JSON.parse(result_data);
+            getAvailableItems($result_data)
+        },
+        error: function(error)
+        {
+            alert(error.statusText);
+        }
+
+    });
+}
+
+function getBoughtItems() {
+    var result_data = null;
+    var request = {
+        "jsonrpc": "2.0",
+        "method": "query",
+        "params": {
+            "type": 1,
+            "chaincodeID": {
+                "name": "ff7c0eb73853755c85ca5af7f1ced1e4f90cdec0c0670f3d7be005e62c49d9dbdb40c9b330aacfd594b921c5d120dab606d9ee60aa808a78158aea1389eb527f"
+            },
+            "ctorMsg": {
+                "function": "list",
+                "args": [
+                    "furqan"
+                ]
+            },
+            "secureContext": "admin"
+        },
+        "id": 2
+    };
+    var json_request = JSON.stringify(request);
+
+
+    $.ajax({
+        url: "https://bf2ecd302ef6404abcf3ad797a0eefaa-vp0.us.blockchain.ibm.com:5002/chaincode",
+        async: true,
+        type: 'post',
+        dataType: 'json',
+        data: json_request,
+        success: function (result) {
+            result_data = JSON.stringify(result.result.message);
+            result_data = result_data.replace(/\"{/g, "{");
+            result_data = result_data.replace(/}\\"/g, "}");
+            result_data = result_data.replace(/\"\[/g, "[");
+            result_data = result_data.replace(/\]\"/g, "]");
+            result_data = result_data.replace(/\\/g, "");
+
+            $result_data = JSON.parse(result_data);
+            getPurchasedItems($result_data)
+        },
+        error: function (error) {
+            alert(error.statusText);
+        }
+
+    });
+}
+
+function getBalance() {
+    var request = {
+        "jsonrpc": "2.0",
+        "method": "query",
+        "params": {
+            "type": 1,
+            "chaincodeID": {
+                "name": "ff7c0eb73853755c85ca5af7f1ced1e4f90cdec0c0670f3d7be005e62c49d9dbdb40c9b330aacfd594b921c5d120dab606d9ee60aa808a78158aea1389eb527f"
+            },
+            "ctorMsg": {
+                "function": "read",
+                "args": [
+                    "furqan"
+                ]
+            },
+            "secureContext": "admin"
+        },
+        "id": 2
+    };
+
+    var json_request = JSON.stringify(request);
+
+
+    $.ajax({
+        url: "https://bf2ecd302ef6404abcf3ad797a0eefaa-vp0.us.blockchain.ibm.com:5002/chaincode",
+        async:true,
+        type: 'post',
+        dataType: 'json',
+        data: json_request,
+        success: function (result) {
+            $("#bal").html(result.result.message);
+        },
+        error: function(error)
+        {
+            console.log(error.statusText);
+        }
+
+    });
+
+
+}
+
+function buy(){
+    var id = $("#itm").val();
+    var qty = $("#qty").val();
+
+
+
+    var request = {
+        "jsonrpc": "2.0",
+        "method": "invoke",
+        "params": {
+            "type": 1,
+            "chaincodeID": {
+                "name": "ff7c0eb73853755c85ca5af7f1ced1e4f90cdec0c0670f3d7be005e62c49d9dbdb40c9b330aacfd594b921c5d120dab606d9ee60aa808a78158aea1389eb527f"
+            },
+            "ctorMsg": {
+                "function": "trade",
+                "args": [
+                    id,
+                    qty
+                ]
+            },
+            "secureContext": "admin"
+        },
+        "id": 3
+    };
+
+    var json_request = JSON.stringify(request);
+    $.ajax({
+        url: "https://bf2ecd302ef6404abcf3ad797a0eefaa-vp0.us.blockchain.ibm.com:5002/chaincode",
+        type: 'post',
+        dataType: 'json',
+        data: json_request,
+        success: function (result) {
+            if(result.result.status == "OK")
+            {
+                alert("Item Purchased");
+                getBoughtItems();
+                getBalance();
+                getItems();
+            }
+        },
+        error: function(error)
+        {
+            alert("Item Not Found");
+        }
+
+    });
+}
+
+function getAvailableItems(data) {
+    $("#tbl tr").remove();
+    for(var j=0;j<data.length;j++)
+    {
+
+        $("#buy .jumbotron .table").find('tbody')
+            .append($('<tr>')
+                .append($('<td>')
+                    .text(data[j].id)
+                )
+                .append($('<td>')
+                    .text(data[j].name)
+                )
+                .append($('<td>')
+                    .text(data[j].price)
+                )
+                .append($('<td>')
+                    .text(data[j].quantity)
+                )
+            );
+    }
+
+}
+
+function getPurchasedItems(data) {
+    $("#tbl2 tr").remove();
+    for(var j=0;j<data.length;j++)
+    {
+        $("#purchased .jumbotron .table").find('tbody')
+            .append($('<tr>')
+                .append($('<td>')
+                    .text(data[j].id)
+                )
+                .append($('<td>')
+                    .text(data[j].name)
+                )
+                .append($('<td>')
+                    .text(data[j].price)
+                )
+                .append($('<td>')
+                    .text(data[j].quantity)
+                )
+            );
+    }
+
+}
+
