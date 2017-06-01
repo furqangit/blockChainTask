@@ -12,7 +12,7 @@
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Blockchain Web-Interface</title>
+      <title>Blockchain scenerio for E-Commerce</title>
       <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
       <!-- Optional Bootstrap theme -->
       <link rel="stylesheet" href="css/bootstrap-theme.min.css">
@@ -38,7 +38,7 @@
                <img src="images/fraunhofer.jpg" class="img-responsive">
             </div>
             <div class="col-sm-6">
-               <h1>Blockchain Web-Interface</h1>
+               <h1>Blockchain scenerio for E-Commerce</h1>
             </div>
             <div class="col-sm-3"></div>
          </div>
@@ -51,6 +51,7 @@
 		 <!-- Left start -->
 		 <div class="col-md-6" id="purchased">
                <div class="jumbotron">
+                   <h3><strong>Buyer:</strong> Furqan</h3>
                   <div class="input-group">
                      <span class="input-group-addon"><strong>Your Balance : </strong></span>
                      <div class="form-control" style="text-align:right;">
@@ -85,6 +86,7 @@
 		<div class="col-md-6" id="buy">
 		   <div class="jumbotron">
 			  <!-- Main start -->
+               <h3><strong>Seller:</strong> Viktor</h3>
 			  <p>Available Products</p>
 			  <div class="bs-example">
 				 <table class="table table-bordered table-hover ">
