@@ -26,7 +26,6 @@ input:-ms-input-placeholder {
 	font-weight:bold;
 	text-align:right;
 }
-/* active tab color not working */
-body> #exTab2 .nav-tabs .active) > a {
-  background-color: #303136 !important;
+body> .container-fluid .col-sm-6 #exTab2 .nav-tabs li.active a{
+    background-color: #ececec;
 }
