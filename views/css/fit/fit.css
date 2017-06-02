@@ -1,23 +1,19 @@
-body> .container-fluid .row .col-sm-3 img {
+body {
+	padding-top: 20px;
+  padding-bottom: 20px;
+}
+body> .container-fluid .row .col-sm-4 img {
 	float: left;
 	background-size: contain;
 }
-body> .container-fluid .row .col-sm-6 h1 {
+body> .container-fluid .row .col-sm-4 h1 {
 	position: relative;
-	top: 10px;
-	left: 60px;
+  top: 10px;
 }
-
-body {
-	padding-top: 20px;
-    padding-bottom: 20px;
-}
-
 .vcenter {
     text-align: center;
     vertical-align: middle;
 }
-
 input::-webkit-input-placeholder {
 	font-weight:bold;
 	text-align:right;
@@ -29,4 +25,7 @@ input:-moz-placeholder {
 input:-ms-input-placeholder {
 	font-weight:bold;
 	text-align:right;
+}
+body> .container-fluid .col-sm-6 #exTab2 .nav-tabs li.active a{
+    background-color: #ececec;
 }

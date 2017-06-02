@@ -11,7 +11,82 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-133">
+              <caret line="178" column="44" lean-forward="false" selection-start-line="178" selection-start-column="44" selection-end-line="178" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fit.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/js/fit/fit.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="393">
+              <caret line="604" column="0" lean-forward="true" selection-start-line="604" selection-start-column="0" selection-end-line="604" selection-end-column="0" />
+              <folding>
+                <element signature="e#91#943#0" expanded="false" />
+                <element signature="n#!!block;n#getBalance#0" expanded="false" />
+                <element signature="n#!!block;n#spend#0" expanded="false" />
+                <element signature="n#!!block;n#earn#0" expanded="false" />
+                <element signature="n#!!block;n#getTollPrice#0" expanded="false" />
+                <element signature="n#!!block;n#getTollBalance#0" expanded="false" />
+                <element signature="n#!!block;n#payToll#0" expanded="false" />
+                <element signature="n#!!block;n#toll_collect#0" expanded="false" />
+                <element signature="n#!!block;n#getCWBalance#0" expanded="false" />
+                <element signature="n#!!block;n#getCWPrice#0" expanded="false" />
+                <element signature="n#!!block;n#getCWAvailability#0" expanded="false" />
+                <element signature="n#!!block;n#car_wash#0" expanded="false" />
+                <element signature="n#!!block;n#getParkingBalance#0" expanded="false" />
+                <element signature="n#!!block;n#getParkingPrice#0" expanded="false" />
+                <element signature="n#!!block;n#getParkingAvailability#0" expanded="false" />
+                <element signature="n#!!block;n#car_parking#0" expanded="false" />
+                <element signature="n#!!block;n#getUberBalance#0" expanded="false" />
+                <element signature="n#!!block;n#getUberPrice#0" expanded="false" />
+                <element signature="n#!!block;n#car_uber#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="xscripts.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/js/fit/xscripts.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="134" column="22" lean-forward="false" selection-start-line="134" selection-start-column="22" selection-end-line="134" selection-end-column="22" />
+              <folding>
+                <element signature="n#!!block;n#reset#0" expanded="false" />
+                <element signature="n#!!block;n#getItems#0" expanded="false" />
+                <element signature="n#!!block;n#getBoughtItems#0" expanded="false" />
+                <element signature="n#!!block;n#getBalance#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery.min.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/scripts/jquery.min.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -24,6 +99,7 @@
       <find>transfer</find>
       <find>getava</find>
       <find>getPurchasedItems</find>
+      <find>alert</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -38,8 +114,9 @@
         <option value="$PROJECT_DIR$/../alptask1/index.php" />
         <option value="$PROJECT_DIR$/controllers/shopping.php" />
         <option value="$PROJECT_DIR$/controllers/items.php" />
-        <option value="$PROJECT_DIR$/views/js/fit/fit.js" />
+        <option value="$PROJECT_DIR$/views/js/fit/xscripts.js" />
         <option value="$PROJECT_DIR$/views/index.php" />
+        <option value="$PROJECT_DIR$/views/js/fit/fit.js" />
       </list>
     </option>
   </component>
@@ -95,6 +172,118 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blockChainTask" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blockChainTask" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blockChainTask" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blockChainTask" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blockChainTask" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blockChainTask" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blockChainTask" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blockChainTask" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blockChainTask" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blockChainTask" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fonts" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blockChainTask" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blockChainTask" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -223,12 +412,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32179000" />
+    <option name="totallyTimeSpent" value="44755000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1193265" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18814056" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -300,18 +490,12 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="3" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/shop.php" />
     <entry file="file://$PROJECT_DIR$/../alptask1/index.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -368,6 +552,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -447,11 +634,25 @@
         <state relative-caret-position="17">
           <caret line="8" column="35" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="8" selection-end-column="35" />
           <folding>
-            <element signature="n#!!block;n#getBoughtItems#0" expanded="false" />
+            <element signature="e#91#943#0" expanded="false" />
             <element signature="n#!!block;n#getBalance#0" expanded="false" />
-            <element signature="n#!!block;n#buy#0" expanded="false" />
-            <element signature="n#!!block;n#getAvailableItems#0" expanded="false" />
-            <element signature="n#!!block;n#getPurchasedItems#0" expanded="false" />
+            <element signature="n#!!block;n#spend#0" expanded="false" />
+            <element signature="n#!!block;n#earn#0" expanded="false" />
+            <element signature="n#!!block;n#getTollPrice#0" expanded="false" />
+            <element signature="n#!!block;n#getTollBalance#0" expanded="false" />
+            <element signature="n#!!block;n#payToll#0" expanded="false" />
+            <element signature="n#!!block;n#toll_collect#0" expanded="false" />
+            <element signature="n#!!block;n#getCWBalance#0" expanded="false" />
+            <element signature="n#!!block;n#getCWPrice#0" expanded="false" />
+            <element signature="n#!!block;n#getCWAvailability#0" expanded="false" />
+            <element signature="n#!!block;n#car_wash#0" expanded="false" />
+            <element signature="n#!!block;n#getParkingBalance#0" expanded="false" />
+            <element signature="n#!!block;n#getParkingPrice#0" expanded="false" />
+            <element signature="n#!!block;n#getParkingAvailability#0" expanded="false" />
+            <element signature="n#!!block;n#car_parking#0" expanded="false" />
+            <element signature="n#!!block;n#getUberBalance#0" expanded="false" />
+            <element signature="n#!!block;n#getUberPrice#0" expanded="false" />
+            <element signature="n#!!block;n#car_uber#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -470,11 +671,25 @@
         <state relative-caret-position="136">
           <caret line="8" column="35" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="8" selection-end-column="35" />
           <folding>
-            <element signature="n#!!block;n#getBoughtItems#0" expanded="false" />
+            <element signature="e#91#943#0" expanded="false" />
             <element signature="n#!!block;n#getBalance#0" expanded="false" />
-            <element signature="n#!!block;n#buy#0" expanded="false" />
-            <element signature="n#!!block;n#getAvailableItems#0" expanded="false" />
-            <element signature="n#!!block;n#getPurchasedItems#0" expanded="false" />
+            <element signature="n#!!block;n#spend#0" expanded="false" />
+            <element signature="n#!!block;n#earn#0" expanded="false" />
+            <element signature="n#!!block;n#getTollPrice#0" expanded="false" />
+            <element signature="n#!!block;n#getTollBalance#0" expanded="false" />
+            <element signature="n#!!block;n#payToll#0" expanded="false" />
+            <element signature="n#!!block;n#toll_collect#0" expanded="false" />
+            <element signature="n#!!block;n#getCWBalance#0" expanded="false" />
+            <element signature="n#!!block;n#getCWPrice#0" expanded="false" />
+            <element signature="n#!!block;n#getCWAvailability#0" expanded="false" />
+            <element signature="n#!!block;n#car_wash#0" expanded="false" />
+            <element signature="n#!!block;n#getParkingBalance#0" expanded="false" />
+            <element signature="n#!!block;n#getParkingPrice#0" expanded="false" />
+            <element signature="n#!!block;n#getParkingAvailability#0" expanded="false" />
+            <element signature="n#!!block;n#car_parking#0" expanded="false" />
+            <element signature="n#!!block;n#getUberBalance#0" expanded="false" />
+            <element signature="n#!!block;n#getUberPrice#0" expanded="false" />
+            <element signature="n#!!block;n#car_uber#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -485,11 +700,25 @@
         <state relative-caret-position="340">
           <caret line="20" column="43" lean-forward="false" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
           <folding>
-            <element signature="n#!!block;n#getBoughtItems#0" expanded="false" />
+            <element signature="e#91#943#0" expanded="false" />
             <element signature="n#!!block;n#getBalance#0" expanded="false" />
-            <element signature="n#!!block;n#buy#0" expanded="false" />
-            <element signature="n#!!block;n#getAvailableItems#0" expanded="false" />
-            <element signature="n#!!block;n#getPurchasedItems#0" expanded="false" />
+            <element signature="n#!!block;n#spend#0" expanded="false" />
+            <element signature="n#!!block;n#earn#0" expanded="false" />
+            <element signature="n#!!block;n#getTollPrice#0" expanded="false" />
+            <element signature="n#!!block;n#getTollBalance#0" expanded="false" />
+            <element signature="n#!!block;n#payToll#0" expanded="false" />
+            <element signature="n#!!block;n#toll_collect#0" expanded="false" />
+            <element signature="n#!!block;n#getCWBalance#0" expanded="false" />
+            <element signature="n#!!block;n#getCWPrice#0" expanded="false" />
+            <element signature="n#!!block;n#getCWAvailability#0" expanded="false" />
+            <element signature="n#!!block;n#car_wash#0" expanded="false" />
+            <element signature="n#!!block;n#getParkingBalance#0" expanded="false" />
+            <element signature="n#!!block;n#getParkingPrice#0" expanded="false" />
+            <element signature="n#!!block;n#getParkingAvailability#0" expanded="false" />
+            <element signature="n#!!block;n#car_parking#0" expanded="false" />
+            <element signature="n#!!block;n#getUberBalance#0" expanded="false" />
+            <element signature="n#!!block;n#getUberPrice#0" expanded="false" />
+            <element signature="n#!!block;n#car_uber#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -514,6 +743,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="608">
           <caret line="86" column="16" lean-forward="true" selection-start-line="86" selection-start-column="16" selection-end-line="86" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -521,6 +751,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="437" column="4" lean-forward="false" selection-start-line="437" selection-start-column="4" selection-end-line="437" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -552,13 +783,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/scripts/jquery.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/js/npm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -577,6 +801,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-595">
           <caret line="97" column="16" lean-forward="false" selection-start-line="97" selection-start-column="16" selection-end-line="97" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -584,6 +809,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="289" column="27" lean-forward="false" selection-start-line="289" selection-start-column="27" selection-end-line="289" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -593,6 +819,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
           <caret line="5910" column="4" lean-forward="false" selection-start-line="5910" selection-start-column="4" selection-end-line="5910" selection-end-column="4" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -607,6 +836,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
           <caret line="228" column="16" lean-forward="false" selection-start-line="228" selection-start-column="16" selection-end-line="228" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -624,20 +854,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/js/fit/fit.js">
+    <entry file="file://$PROJECT_DIR$/views/scripts/jquery.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="8" column="35" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="8" selection-end-column="35" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!block;n#getBoughtItems#0" expanded="false" />
-            <element signature="n#!!block;n#getBalance#0" expanded="false" />
-            <element signature="n#!!block;n#buy#0" expanded="false" />
-            <element signature="n#!!block;n#getAvailableItems#0" expanded="false" />
-            <element signature="n#!!block;n#getPurchasedItems#0" expanded="false" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.php" />
+    <entry file="file://$PROJECT_DIR$/views/js/fit/xscripts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="134" column="22" lean-forward="false" selection-start-line="134" selection-start-column="22" selection-end-line="134" selection-end-column="22" />
+          <folding>
+            <element signature="n#!!block;n#reset#0" expanded="false" />
+            <element signature="n#!!block;n#getItems#0" expanded="false" />
+            <element signature="n#!!block;n#getBoughtItems#0" expanded="false" />
+            <element signature="n#!!block;n#getBalance#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/js/fit/fit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="604" column="0" lean-forward="true" selection-start-line="604" selection-start-column="0" selection-end-line="604" selection-end-column="0" />
+          <folding>
+            <element signature="e#91#943#0" expanded="false" />
+            <element signature="n#!!block;n#getBalance#0" expanded="false" />
+            <element signature="n#!!block;n#spend#0" expanded="false" />
+            <element signature="n#!!block;n#earn#0" expanded="false" />
+            <element signature="n#!!block;n#getTollPrice#0" expanded="false" />
+            <element signature="n#!!block;n#getTollBalance#0" expanded="false" />
+            <element signature="n#!!block;n#payToll#0" expanded="false" />
+            <element signature="n#!!block;n#toll_collect#0" expanded="false" />
+            <element signature="n#!!block;n#getCWBalance#0" expanded="false" />
+            <element signature="n#!!block;n#getCWPrice#0" expanded="false" />
+            <element signature="n#!!block;n#getCWAvailability#0" expanded="false" />
+            <element signature="n#!!block;n#car_wash#0" expanded="false" />
+            <element signature="n#!!block;n#getParkingBalance#0" expanded="false" />
+            <element signature="n#!!block;n#getParkingPrice#0" expanded="false" />
+            <element signature="n#!!block;n#getParkingAvailability#0" expanded="false" />
+            <element signature="n#!!block;n#car_parking#0" expanded="false" />
+            <element signature="n#!!block;n#getUberBalance#0" expanded="false" />
+            <element signature="n#!!block;n#getUberPrice#0" expanded="false" />
+            <element signature="n#!!block;n#car_uber#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-133">
+          <caret line="178" column="44" lean-forward="false" selection-start-line="178" selection-start-column="44" selection-end-line="178" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
