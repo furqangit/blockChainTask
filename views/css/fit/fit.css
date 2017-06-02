@@ -29,3 +29,10 @@ input:-ms-input-placeholder {
 body> .container-fluid .col-sm-6 #exTab2 .nav-tabs li.active a{
     background-color: #ececec;
 }
+body> .container-fluid .col-sm-6 #exTab2 .nav-tabs > li, .nav-pills > li {
+    float:none;
+    display:inline-block;
+}
+body> .container-fluid .col-sm-6 #exTab2 .nav-tabs {
+    text-align:center;
+}
