@@ -80,6 +80,7 @@
 													<input type="checkbox" id="toggle-trigger" checked data-toggle="toggle" data-on="Ready" data-off="Busy" data-onstyle="success" data-offstyle="danger">
 													<script>
 													  $(function() {
+													    $($('#btnCarWash')).prop('disabled', !$(this).prop('checked'));
 														$('#toggle-trigger').change(function() {
 															var toggle_value = $(this).prop('checked');
 															var button = $('#btnCarWash');
