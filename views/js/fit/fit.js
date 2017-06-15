@@ -394,7 +394,8 @@ function getCWAvailability() {
         data: json_request,
         success: function (result) {
             console.log(result.result.message);
-            $("#avl").html((result.result.message)?"Yes":"No");
+			// TODO change availability
+            //$("#avl").html((result.result.message)?"Yes":"No");
         },
         error: function (error) {
             alert(error.statusText);
@@ -548,7 +549,8 @@ function getParkingAvailability() {
         data: json_request,
         success: function (result) {
             console.log(result.result.message);
-            $("#prkAvl").html((result.result.message)?"Yes":"No");
+			// TODO change availability
+            //$("#prkAvl").html((result.result.message)?"Yes":"No");
         },
         error: function (error) {
             alert(error.statusText);
