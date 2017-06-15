@@ -21,12 +21,10 @@
     <!-- Extra imports for FIT coin -->
     <link rel="stylesheet" type="text/css" href="../css/fit/fit.css">
     <script type="text/javascript" src="../js/fit/fit.js"></script>
-    <script type="text/javascript" src="./scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="../scripts/jquery.min.js"></script>
+	<!-- Bootstrap toggle imports, http://www.bootstraptoggle.com/ -->
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap-toggle.min.css">
-	<link rel="stylesheet" type="text/css" href="../css/bootstrap-toggle.css">
-	<script type="text/javascript" src="../js/bootstrap-toggle.js"></script>
 	<script type="text/javascript" src="../js/bootstrap-toggle.min.js"></script>
-	<script type="text/javascript" src="../js/bootstrap-toggle.min.js.map"></script>
 </head>
 <body>
     <div class="container-fluid">
@@ -79,16 +77,18 @@
                                             <tb>
                                                 <td>Bonn Markt</td>
                                                 <td id="prkAvl">
- 													<input id="toggle-trigger" type="checkbox" data-toggle="toggle">
-													<button class="btn btn-success" onclick="toggleOn()">On by API</button>
-													<button class="btn btn-danger" onclick="toggleOff()">Off by API</button>
+													<input type="checkbox" id="toggle-trigger" checked data-toggle="toggle" data-on="Empty" data-off="Full" data-onstyle="success" data-offstyle="danger">
 													<script>
-													  function toggleOn() {
-														$('#toggle-trigger').bootstrapToggle('on')
-													  }
-													  function toggleOff() {
-														$('#toggle-trigger').bootstrapToggle('off')  
-													  }
+													  $(function() {
+														$('#toggle-trigger').change(function() {
+															var toggle_value = $(this).prop('checked');
+															var button = $('#btnCarPark');
+															if(toggle_value){
+																$(button).prop('disabled', true);
+															}
+															else{$(button).prop('disabled', false);}
+														})
+													  })
 													</script>
                                                 </td>
                                                 <td id="prkBal"></td>
@@ -97,8 +97,14 @@
                                     </table>
                                 </div>
                                 <form>
-                                    <button type="button" onclick="car_parking()" class="btn btn-primary pull-right">
+                                    <button type="button" id="btnCarPark" onclick="car_parking()" class="btn btn-primary pull-right">
                                         <span class="glyphicon glyphicon-map-marker"></span> Park Car</button>
+									<!--
+									<script>
+										var buttonValue = $('#toggle-trigger').
+										alert(buttonValue);
+									</script>
+									-->
                                     <br></br>
                                 </form>
                             </div>
