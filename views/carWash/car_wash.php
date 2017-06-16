@@ -82,17 +82,28 @@
                                                    data-offstyle="danger">
                                             <script>
                                                 $(function () {
-                                                    $($('#btnCarWash')).prop('disabled', !$(this).prop('checked'));
+													// $('#toggle-trigger').bootstrapToggle('off');
+													$('#btnCarWash').prop('disabled', true);
+													if($('#toggle-trigger').prop('checked')){
+														console.log("toggle: checked");
+														$('#warningMsg_toggleOn').show();
+														$('#warningMsg_toggleOff').hide();
+													}else{
+														console.log("toggle: unchecked");
+														$('#warningMsg_toggleOn').hide();
+														$('#warningMsg_toggleOff').show();
+														$('#toggle-trigger').bootstrapToggle('disable');
+													}
                                                     $('#toggle-trigger').change(function () {
-                                                        var toggle_value = $(this).prop('checked');
+                                                        var toggle_value = $($('#toggle-trigger')).prop('checked');
                                                         var button = $('#btnCarWash');
                                                         if (!toggle_value) {
                                                             $(button).prop('disabled', false);
-															$('#warningMsg').hide();
+															$('#warningMsg_toggleOn').hide();
                                                         }
                                                         else {
                                                             $(button).prop('disabled', true);
-															$('#warningMsg').show();
+															$('#warningMsg_toggleOn').show();
                                                         }
                                                     })
                                                 })
@@ -104,16 +115,12 @@
                                 </table>
                             </div>
                             <form>
-								<a href="#" id="warningMsg">* Please first toggle availability status to park!</a>
+								<a href="#" id="warningMsg_toggleOn">* Please first switch the availability status to wash!</a>
+								<a href="#" id="warningMsg_toggleOff">* Please wait for current car to finish!</a>
                                 <button type="button" id="btnCarWash" onclick="car_wash()"
                                         class="btn btn-primary pull-right">
                                     <span class="glyphicon glyphicon-refresh"></span> Wash Car
                                 </button>
-								<script>
-									  if($('#btnCarPark').is(':disabled')) {
-										$('#warningMsg').hide();
-									  }
-								</script>
                                 <br>
                             </form>
                         </div>

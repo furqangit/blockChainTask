@@ -84,17 +84,32 @@
                                                    data-offstyle="danger">
                                             <script>
                                                 $(function () {
-                                                    $($('#btnCarPark')).prop('disabled', !$(this).prop('checked'));
+													$('#toggle-trigger').bootstrapToggle('off');
+													$('#btnCarPark').prop('disabled', true);
+													$('#hrs').prop('disabled', true);
+													if($('#toggle-trigger').prop('checked')){
+														console.log("toggle: checked");
+														$('#warningMsg_toggleOn').show();
+														$('#warningMsg_toggleOff').hide();
+													}else{
+														console.log("toggle: unchecked");
+														$('#warningMsg_toggleOn').hide();
+														$('#warningMsg_toggleOff').show();
+														$('#toggle-trigger').bootstrapToggle('disable');
+													}
                                                     $('#toggle-trigger').change(function () {
-                                                        var toggle_value = $(this).prop('checked');
+                                                        var toggle_value = $('#toggle-trigger').prop('checked');
                                                         var button = $('#btnCarPark');
+														var input = $('#hrs');
                                                         if (!toggle_value) {
                                                             $(button).prop('disabled', false);
-															$('#warningMsg').hide();
+															$(input).prop('disabled', false);
+															$('#warningMsg_toggleOn').hide();
                                                         }
                                                         else {
                                                             $(button).prop('disabled', true);
-															$('#warningMsg').show();
+															$(input).prop('disabled', true);
+															$('#warningMsg_toggleOn').show();
                                                         }
                                                     })
                                                 })
@@ -105,31 +120,21 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <form>
-                                <div class="col-lg-12">
-                                    <div class="col-lg-8">
-                                        <label for="hrs">Hours</label>
-                                        <input id="hrs" type="text" class="form-control">
-                                    </div>
-                                    <div class="col-lg-4" style="padding-top: 26px">
-										<div class="row">
-											<button type="button" id="btnCarPark" onclick="car_parking()"
-													class="btn btn-primary pull-right">
-												<span class="glyphicon glyphicon-map-marker"></span> Park Car
-											</button>
-											 <script>
-												  if($('#btnCarPark').is(':disabled')) {
-													$('#warningMsg').hide();
-												  }
-											</script>
-										</div>
-                                    </div>
-                                </div>
-                            </form>
+							<form>
+								<label for="hrs">Hours</label>
+								<input id="hrs" type="text" class="form-control">
+							</form>
 							<br></br>
-							<div class="col-lg-12">
-								<a href="#" id="warningMsg">* Please first toggle availability status to park!</a>
-							</div>
+							<form>
+								<a href="#" id="warningMsg_toggleOn">* Please first toggle availability status to park!</a>
+								<a href="#" id="warningMsg_toggleOff">* Please wait for current car to finish!</a>
+								<button type="button" id="btnCarPark" onclick="car_parking()"
+										class="btn btn-primary pull-right">
+									<span class="glyphicon glyphicon-map-marker"></span> Park Car
+								</button>
+                                <br>
+                            </form>
+
                         </div>
                     </div>
                 </div>
