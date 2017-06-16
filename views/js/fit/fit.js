@@ -1,12 +1,12 @@
 function alertFunc() {
 		alert("no available function !");
 }
-
+ var height = 0;
 $(document).ready(function() {
 
     var data = {
         "enrollId" : "admin",
-        "enrollSecret" : "19ad565b93"
+        "enrollSecret" : "dfb03c0214"
     };
     var data_json = JSON.stringify(data);
 
@@ -15,10 +15,12 @@ $(document).ready(function() {
         type: 'post',
         dataType: 'json',
         data: data_json,
+        async: false,
         success: function (result) {
-            console.log(result);
+
             getBalance();
             getTollPrice();
+            getTollBalance();
             getTollBalance();
             getCWBalance();
             getCWPrice();
@@ -47,7 +49,7 @@ function getBalance() {
         "params": {
             "type": 1,
             "chaincodeID": {
-                "name": "1ed4f599ea8d8e922a60aff7d6c5e4da6dbcf44126db8eb702282b2859df4394d5f40263bd9e60a3e1195dc12c244fcc4c9b6234b42d8bd3d8eac3e841745e3c"
+                "name": "170560c26bca721f163ea8eb86d8ee49d0927eabf7ec4d9f3779880817015662cf0841cd23b489b92c607162b42374cd511637a7797b3967b693c6ae78e22cb4"
             },
             "ctorMsg": {
                 "function": "balance",
@@ -63,7 +65,7 @@ function getBalance() {
 
     $.ajax({
         url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
-        async:true,
+        async:false,
         type: 'post',
         dataType: 'json',
         data: json_request,
@@ -87,7 +89,7 @@ function spend(sum,purpose) {
         "params": {
             "type": 1,
             "chaincodeID": {
-                "name": "1ed4f599ea8d8e922a60aff7d6c5e4da6dbcf44126db8eb702282b2859df4394d5f40263bd9e60a3e1195dc12c244fcc4c9b6234b42d8bd3d8eac3e841745e3c"
+                "name": "170560c26bca721f163ea8eb86d8ee49d0927eabf7ec4d9f3779880817015662cf0841cd23b489b92c607162b42374cd511637a7797b3967b693c6ae78e22cb4"
             },
             "ctorMsg": {
                 "function": "spend",
@@ -102,18 +104,16 @@ function spend(sum,purpose) {
     };
     var json_request = JSON.stringify(request);
 
-
     $.ajax({
         url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
         async: false,
+        cache: false,
         type: 'post',
         dataType: 'json',
         data: json_request,
         success: function (result) {
-            getBalance();
-            getTollBalance();
-            getCWBalance();
-            getParkingBalance();
+                alert("Your request has been sent!");
+                location.reload();
         },
         error: function (error) {
             alert(error.statusText);
@@ -131,7 +131,7 @@ function earn(sum,source) {
         "params": {
             "type": 1,
             "chaincodeID": {
-                "name": "1ed4f599ea8d8e922a60aff7d6c5e4da6dbcf44126db8eb702282b2859df4394d5f40263bd9e60a3e1195dc12c244fcc4c9b6234b42d8bd3d8eac3e841745e3c"
+                "name": "170560c26bca721f163ea8eb86d8ee49d0927eabf7ec4d9f3779880817015662cf0841cd23b489b92c607162b42374cd511637a7797b3967b693c6ae78e22cb4"
             },
             "ctorMsg": {
                 "function": "earn",
@@ -149,13 +149,13 @@ function earn(sum,source) {
 
     $.ajax({
         url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
-        async: true,
+        async: false,
         type: 'post',
         dataType: 'json',
         data: json_request,
         success: function (result) {
-            getBalance();
-            getUberBalance();
+            alert("Enjoy they Ride!");
+            location.reload();
         },
         error: function (error) {
             alert(error.statusText);
@@ -172,7 +172,7 @@ function getTollPrice() {
         "params": {
             "type": 1,
             "chaincodeID": {
-                "name": "5952f7a15ef85e0004124a83b0d0c06176e2a7a765cf96cf05729bb53b5d3da9033dee1ece045cf50725dfa305710104f8b5e2c8be120d3b03506783d0bb26c1"
+                "name": "4a628b196cc9ec33002cc2169cba4c2bd2801b96c6f8a1c7711fa70f0cabfe4023bdcf8832d7f35b8470b6faf04e8e440123340666cef3093ef47cd73828a187"
             },
             "ctorMsg": {
                 "function": "price",
@@ -210,7 +210,7 @@ function getTollBalance() {
         "params": {
             "type": 1,
             "chaincodeID": {
-                "name": "5952f7a15ef85e0004124a83b0d0c06176e2a7a765cf96cf05729bb53b5d3da9033dee1ece045cf50725dfa305710104f8b5e2c8be120d3b03506783d0bb26c1"
+                "name": "4a628b196cc9ec33002cc2169cba4c2bd2801b96c6f8a1c7711fa70f0cabfe4023bdcf8832d7f35b8470b6faf04e8e440123340666cef3093ef47cd73828a187"
             },
             "ctorMsg": {
                 "function": "balance",
@@ -224,7 +224,7 @@ function getTollBalance() {
 
     $.ajax({
         url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
-        async: true,
+        async: false,
         type: 'post',
         dataType: 'json',
         data: json_request,
@@ -246,7 +246,7 @@ function payToll(amount) {
         "params": {
             "type": 1,
             "chaincodeID": {
-                "name": "5952f7a15ef85e0004124a83b0d0c06176e2a7a765cf96cf05729bb53b5d3da9033dee1ece045cf50725dfa305710104f8b5e2c8be120d3b03506783d0bb26c1"
+                "name": "4a628b196cc9ec33002cc2169cba4c2bd2801b96c6f8a1c7711fa70f0cabfe4023bdcf8832d7f35b8470b6faf04e8e440123340666cef3093ef47cd73828a187"
             },
             "ctorMsg": {
                 "function": "pay",
@@ -262,12 +262,11 @@ function payToll(amount) {
 
     $.ajax({
         url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
-        async: true,
+        async: false,
         type: 'post',
         dataType: 'json',
         data: json_request,
         success: function (result) {
-            console.log(result.result);
             spend(amount,"tollcollect");
         },
         error: function (error) {
@@ -299,7 +298,7 @@ function getCWBalance() {
         "params": {
             "type": 1,
             "chaincodeID": {
-                "name": "d693dcdf3860f861cbf75273b8245c598832015787ea7b3192dcd4fde226a96f3c3a1578f31892c31beadc4a72a2ce7ee56bad91790c29e518604e35762580b3"
+                "name": "42602ab0d80c9fec2ed8c796989121bffc98ce51634e260d7b82d6047371da6ec9632c755da605e565f20844c13a20fcc807cd0394e5dd65063b395d38538a4c"
             },
             "ctorMsg": {
                 "function": "balance",
@@ -313,7 +312,7 @@ function getCWBalance() {
 
     $.ajax({
         url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
-        async: true,
+        async: false,
         type: 'post',
         dataType: 'json',
         data: json_request,
@@ -335,7 +334,7 @@ function getCWPrice() {
         "params": {
             "type": 1,
             "chaincodeID": {
-                "name": "d693dcdf3860f861cbf75273b8245c598832015787ea7b3192dcd4fde226a96f3c3a1578f31892c31beadc4a72a2ce7ee56bad91790c29e518604e35762580b3"
+                "name": "42602ab0d80c9fec2ed8c796989121bffc98ce51634e260d7b82d6047371da6ec9632c755da605e565f20844c13a20fcc807cd0394e5dd65063b395d38538a4c"
             },
             "ctorMsg": {
                 "function": "price",
@@ -374,7 +373,7 @@ function getCWAvailability() {
         "params": {
             "type": 1,
             "chaincodeID": {
-                "name": "d693dcdf3860f861cbf75273b8245c598832015787ea7b3192dcd4fde226a96f3c3a1578f31892c31beadc4a72a2ce7ee56bad91790c29e518604e35762580b3"
+                "name": "42602ab0d80c9fec2ed8c796989121bffc98ce51634e260d7b82d6047371da6ec9632c755da605e565f20844c13a20fcc807cd0394e5dd65063b395d38538a4c"
             },
             "ctorMsg": {
                 "function": "available",
@@ -388,7 +387,7 @@ function getCWAvailability() {
 
     $.ajax({
         url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
-        async: true,
+        async: false,
         type: 'post',
         dataType: 'json',
         data: json_request,
@@ -413,7 +412,7 @@ function car_wash() {
         "params": {
             "type": 1,
             "chaincodeID": {
-                "name": "d693dcdf3860f861cbf75273b8245c598832015787ea7b3192dcd4fde226a96f3c3a1578f31892c31beadc4a72a2ce7ee56bad91790c29e518604e35762580b3"
+                "name": "42602ab0d80c9fec2ed8c796989121bffc98ce51634e260d7b82d6047371da6ec9632c755da605e565f20844c13a20fcc807cd0394e5dd65063b395d38538a4c"
             },
             "ctorMsg": {
                 "function": "pay",
@@ -430,7 +429,7 @@ function car_wash() {
 
     $.ajax({
         url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
-        async: true,
+        async: false,
         type: 'post',
         dataType: 'json',
         data: json_request,
@@ -453,7 +452,7 @@ function getParkingBalance() {
         "params": {
             "type": 1,
             "chaincodeID": {
-                "name": "ec39946add9d317db5835b096d395b477fde204a9ff0891b48bb090ffe1ee47217d9d98288864f8a20fc5461e7c15bb8dc70f248c0e17073c3e338d31bb4d112"
+                "name": "8a273890a316cb8d0e42d60e05b1cd4c6d267d5b415c0adf9d031815596e3b48cf7c5efab1ea7c8662dfa03badca2881762a71ddddd94447b3e3e632c512cd77"
             },
             "ctorMsg": {
                 "function": "balance",
@@ -467,7 +466,7 @@ function getParkingBalance() {
 
     $.ajax({
         url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
-        async: true,
+        async: false,
         type: 'post',
         dataType: 'json',
         data: json_request,
@@ -489,7 +488,7 @@ function getParkingPrice(){
         "params": {
             "type": 1,
             "chaincodeID": {
-                "name": "ec39946add9d317db5835b096d395b477fde204a9ff0891b48bb090ffe1ee47217d9d98288864f8a20fc5461e7c15bb8dc70f248c0e17073c3e338d31bb4d112"
+                "name": "8a273890a316cb8d0e42d60e05b1cd4c6d267d5b415c0adf9d031815596e3b48cf7c5efab1ea7c8662dfa03badca2881762a71ddddd94447b3e3e632c512cd77"
             },
             "ctorMsg": {
                 "function": "price",
@@ -529,7 +528,7 @@ function getParkingAvailability() {
         "params": {
             "type": 1,
             "chaincodeID": {
-                "name": "ec39946add9d317db5835b096d395b477fde204a9ff0891b48bb090ffe1ee47217d9d98288864f8a20fc5461e7c15bb8dc70f248c0e17073c3e338d31bb4d112"
+                "name": "8a273890a316cb8d0e42d60e05b1cd4c6d267d5b415c0adf9d031815596e3b48cf7c5efab1ea7c8662dfa03badca2881762a71ddddd94447b3e3e632c512cd77"
             },
             "ctorMsg": {
                 "function": "available",
@@ -543,7 +542,7 @@ function getParkingAvailability() {
 
     $.ajax({
         url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
-        async: true,
+        async: false,
         type: 'post',
         dataType: 'json',
         data: json_request,
@@ -570,7 +569,7 @@ function car_parking() {
         "params": {
             "type": 1,
             "chaincodeID": {
-                "name": "ec39946add9d317db5835b096d395b477fde204a9ff0891b48bb090ffe1ee47217d9d98288864f8a20fc5461e7c15bb8dc70f248c0e17073c3e338d31bb4d112"
+                "name": "8a273890a316cb8d0e42d60e05b1cd4c6d267d5b415c0adf9d031815596e3b48cf7c5efab1ea7c8662dfa03badca2881762a71ddddd94447b3e3e632c512cd77"
             },
             "ctorMsg": {
                 "function": "pay",
@@ -587,7 +586,7 @@ function car_parking() {
 
     $.ajax({
         url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
-        async: true,
+        async: false,
         type: 'post',
         dataType: 'json',
         data: json_request,
@@ -613,7 +612,7 @@ function getUberBalance() {
         "params": {
             "type": 1,
             "chaincodeID": {
-                "name": "faa67d5a21da01c6ae6f6eddf001e0e59b746635da3caed1c1b6071216de992949cfbf5d1d64816d0532231861668a91456558cb63092a85728fbc021e0c1bac"
+                "name": "28ce4c27f62002f5432c1b4888d6d3948e136167b4f40404e8bff24af63b766af3186d6dd7cd12f74cfa7d1d80b36bb785c7499bacf6b416348b48f40ffead81"
             },
             "ctorMsg": {
                 "function": "balance",
@@ -627,7 +626,7 @@ function getUberBalance() {
 
     $.ajax({
         url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
-        async: true,
+        async: false,
         type: 'post',
         dataType: 'json',
         data: json_request,
@@ -649,7 +648,7 @@ function getUberPrice(){
         "params": {
             "type": 1,
             "chaincodeID": {
-                "name": "faa67d5a21da01c6ae6f6eddf001e0e59b746635da3caed1c1b6071216de992949cfbf5d1d64816d0532231861668a91456558cb63092a85728fbc021e0c1bac"
+                "name": "28ce4c27f62002f5432c1b4888d6d3948e136167b4f40404e8bff24af63b766af3186d6dd7cd12f74cfa7d1d80b36bb785c7499bacf6b416348b48f40ffead81"
             },
             "ctorMsg": {
                 "function": "price",
@@ -693,7 +692,7 @@ function car_uber() {
         "params": {
             "type": 1,
             "chaincodeID": {
-                "name": "faa67d5a21da01c6ae6f6eddf001e0e59b746635da3caed1c1b6071216de992949cfbf5d1d64816d0532231861668a91456558cb63092a85728fbc021e0c1bac"
+                "name": "28ce4c27f62002f5432c1b4888d6d3948e136167b4f40404e8bff24af63b766af3186d6dd7cd12f74cfa7d1d80b36bb785c7499bacf6b416348b48f40ffead81"
             },
             "ctorMsg": {
                 "function": "drive",
@@ -710,7 +709,7 @@ function car_uber() {
 
     $.ajax({
         url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
-        async: true,
+        async: false,
         type: 'post',
         dataType: 'json',
         data: json_request,
@@ -725,3 +724,26 @@ function car_uber() {
 
     });
 }
+
+//_________________________________________________________________________________________________
+/*
+
+function checkHeight()
+{
+
+    $.ajax({
+        url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chain",
+        async: false,
+        type: 'post',
+        dataType: 'json',
+        data: '',
+        success: function (result) {
+            console.log(result);
+        },
+        error: function (error) {
+            alert(error.statusText);
+            console.log(error);
+        }
+
+    });
+}*/
