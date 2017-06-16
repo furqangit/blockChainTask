@@ -84,7 +84,7 @@
                                                    data-offstyle="danger">
                                             <script>
                                                 $(function () {
-													$('#toggle-trigger').bootstrapToggle('off');
+													// $('#toggle-trigger').bootstrapToggle('off');
 													$('#btnCarPark').prop('disabled', true);
 													$('#hrs').prop('disabled', true);
 													if($('#toggle-trigger').prop('checked')){
