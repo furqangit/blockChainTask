@@ -84,15 +84,17 @@
                                                    data-offstyle="danger">
                                             <script>
                                                 $(function () {
-                                                    //$($('#btnCarPark')).prop('disabled', !$(this).prop('checked'));
+                                                    $($('#btnCarPark')).prop('disabled', !$(this).prop('checked'));
                                                     $('#toggle-trigger').change(function () {
                                                         var toggle_value = $(this).prop('checked');
                                                         var button = $('#btnCarPark');
-                                                        if (toggle_value) {
+                                                        if (!toggle_value) {
                                                             $(button).prop('disabled', false);
+															$('#warningMsg').hide();
                                                         }
                                                         else {
                                                             $(button).prop('disabled', true);
+															$('#warningMsg').show();
                                                         }
                                                     })
                                                 })
@@ -104,29 +106,30 @@
                                 </table>
                             </div>
                             <form>
-                                <br>
                                 <div class="col-lg-12">
-
                                     <div class="col-lg-8">
                                         <label for="hrs">Hours</label>
                                         <input id="hrs" type="text" class="form-control">
                                     </div>
                                     <div class="col-lg-4" style="padding-top: 26px">
-                                        <button type="button" id="btnCarPark" onclick="car_parking()"
-                                                class="btn btn-primary pull-right">
-                                            <span class="glyphicon glyphicon-map-marker"></span> Park Car
-                                        </button>
-                                        <!--
-                                        <script>
-                                            var buttonValue = $('#toggle-trigger').
-                                            alert(buttonValue);
-                                        </script>
-                                        -->
+										<div class="row">
+											<button type="button" id="btnCarPark" onclick="car_parking()"
+													class="btn btn-primary pull-right">
+												<span class="glyphicon glyphicon-map-marker"></span> Park Car
+											</button>
+											 <script>
+												  if($('#btnCarPark').is(':disabled')) {
+													$('#warningMsg').hide();
+												  }
+											</script>
+										</div>
                                     </div>
                                 </div>
-
-                                <br></br>
                             </form>
+							<br></br>
+							<div class="col-lg-12">
+								<a href="#" id="warningMsg">* Please first toggle availability status to park!</a>
+							</div>
                         </div>
                     </div>
                 </div>

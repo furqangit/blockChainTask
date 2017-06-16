@@ -82,15 +82,17 @@
                                                    data-offstyle="danger">
                                             <script>
                                                 $(function () {
-                                                    //$($('#btnCarWash')).prop('disabled', !$(this).prop('checked'));
+                                                    $($('#btnCarWash')).prop('disabled', !$(this).prop('checked'));
                                                     $('#toggle-trigger').change(function () {
                                                         var toggle_value = $(this).prop('checked');
                                                         var button = $('#btnCarWash');
-                                                        if (toggle_value) {
+                                                        if (!toggle_value) {
                                                             $(button).prop('disabled', false);
+															$('#warningMsg').hide();
                                                         }
                                                         else {
                                                             $(button).prop('disabled', true);
+															$('#warningMsg').show();
                                                         }
                                                     })
                                                 })
@@ -102,10 +104,16 @@
                                 </table>
                             </div>
                             <form>
+								<a href="#" id="warningMsg">* Please first toggle availability status to park!</a>
                                 <button type="button" id="btnCarWash" onclick="car_wash()"
                                         class="btn btn-primary pull-right">
                                     <span class="glyphicon glyphicon-refresh"></span> Wash Car
                                 </button>
+								<script>
+									  if($('#btnCarPark').is(':disabled')) {
+										$('#warningMsg').hide();
+									  }
+								</script>
                                 <br>
                             </form>
                         </div>
