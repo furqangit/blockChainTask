@@ -71,6 +71,7 @@
                                         <th>Company</th>
                                         <th>Availability</th>
                                         <th>Balance ($)</th>
+                                        <th>Price ($)</th>
                                     </tr>
                                     </thead>
                                     <tbody id="car_wash_data">
@@ -110,19 +111,27 @@
                                             </script>
                                         </td>
                                         <td id="cwBal"></td>
+                                        <td id="cwPrc"></td>
                                     </tb>
                                     </tbody>
                                 </table>
                             </div>
                             <form>
-								<a href="#" id="warningMsg_toggleOn">* Please first switch the availability status to wash!</a>
-								<a href="#" id="warningMsg_toggleOff">* Please wait for current car to finish!</a>
                                 <button type="button" id="btnCarWash" onclick="car_wash()"
                                         class="btn btn-primary pull-right">
                                     <span class="glyphicon glyphicon-refresh"></span> Wash Car
                                 </button>
-                                <br>
+                                <button type="button" id="btnSendToScreen" onclick="wash_screen()"
+                                        class="btn btn-primary">
+                                    <span class="glyphicon glyphicon-send"></span> Send data to screen
+                                </button>
+                                <button type="button" id="btnPullRfid" onclick="pull_rfid()"
+                                        class="btn btn-primary">
+                                    <span class="glyphicon glyphicon-bell"></span> Pull data
+                                </button>
                             </form>
+                            <a href="#" id="warningMsg_toggleOn">* Please first switch the availability status to wash!</a>
+                            <a href="#" id="warningMsg_toggleOff">* Please wait for current car to finish!</a>
                         </div>
                     </div>
                 </div>

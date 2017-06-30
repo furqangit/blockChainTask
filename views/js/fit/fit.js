@@ -2,6 +2,10 @@ function alertFunc() {
 		alert("no available function !");
 }
  var height = 0;
+ var last_timestamp = 0;
+ var rfid_codes = {
+    "carwash": "5b36312c2032362c2037352c203131342c2033305d"
+ }
 $(document).ready(function() {
 
     var data = {
@@ -37,6 +41,9 @@ $(document).ready(function() {
         }
 
     });
+    last_timestamp = Date.now();
+    wash_screen();
+    pull_rfid(true);
 
 
 });
@@ -112,7 +119,6 @@ function spend(sum,purpose) {
         dataType: 'json',
         data: json_request,
         success: function (result) {
-                alert("Your request has been sent!");
                 location.reload();
         },
         error: function (error) {
@@ -324,6 +330,59 @@ function getCWBalance() {
         }
 
     });
+}
+
+function wash_screen() {
+    var bal = $("#cwBal").html();
+    var price = $("#cwPrc").html();
+    $.ajax({
+        url: "http://10.223.90.227:5000/lcd?line1=Carwash+Price%3A" + price +"&line2=Balance%3A" + bal,
+        type: 'get',
+        success: function (result) {
+            console.log("Hardware notified");
+        },
+        error: function (error) {
+            console.log(error);
+        }
+
+    });
+}
+
+function pull_rfid(repeat) {
+    console.log("Pulling rfid");
+    $.ajax({
+        url: "http://10.223.90.227:5000/rfid/",
+        type: 'get',
+        success: function (result) {
+            process_rfid(result);
+            if (repeat) {
+                setTimeout(function() {
+                    pull_rfid(true);
+                }, 5000);
+            }
+        },
+        error: function (error) {
+            console.log(error);
+        }
+    });
+}
+
+function process_rfid(result) {
+    var data = JSON.parse(result);
+    var maxTimeStamp = last_timestamp;
+    data.forEach(function (record) {
+        var timestamp = Date.parse(record.timestamp);
+        if (timestamp > last_timestamp) {
+            console.log(record.cardUID);
+            if (record.cardUID === rfid_codes.carwash) {
+                car_wash();
+            }
+            if (timestamp > maxTimeStamp) {
+                maxTimeStamp = timestamp;
+            }
+        }
+    });
+    last_timestamp = maxTimeStamp;
 }
 
 function getCWPrice() {
