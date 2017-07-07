@@ -77,24 +77,24 @@
                                     <tb>
                                         <td>Bonn Car Wash</td>
                                         <td id="avl">
-                                            <input type="checkbox" id="toggle-trigger" checked data-toggle="toggle"
+                                           <!-- <input type="checkbox" id="toggle-trigger" checked data-toggle="toggle"
                                                    data-on="Free" data-off="Busy" data-onstyle="success"
                                                    data-offstyle="danger">
                                             <script>
                                                 $(function () {
-                                                    //$($('#btnCarWash')).prop('disabled', !$(this).prop('checked'));
+                                                    $($('#btnCarWash')).prop('disabled', !$(this).prop('checked'));
                                                     $('#toggle-trigger').change(function () {
                                                         var toggle_value = $(this).prop('checked');
                                                         var button = $('#btnCarWash');
                                                         if (toggle_value) {
-                                                            $(button).prop('disabled', false);
+                                                            $(button).prop('disabled', true);
                                                         }
                                                         else {
-                                                            $(button).prop('disabled', true);
+                                                            $(button).prop('disabled', false);
                                                         }
                                                     })
                                                 })
-                                            </script>
+                                            </script>-->
                                         </td>
                                         <td id="cwBal"></td>
                                     </tb>

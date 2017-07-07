@@ -25,17 +25,14 @@
       <file leaf-file-name="fit.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/js/fit/fit.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="157" column="30" lean-forward="false" selection-start-line="157" selection-start-column="30" selection-end-line="157" selection-end-column="30" />
+            <state relative-caret-position="4335">
+              <caret line="417" column="18" lean-forward="true" selection-start-line="417" selection-start-column="18" selection-end-line="417" selection-end-column="18" />
               <folding>
-                <element signature="e#107#979#0" expanded="false" />
                 <element signature="n#!!block;n#getBalance#0" expanded="false" />
                 <element signature="n#!!block;n#getTollBalance#0" expanded="false" />
+                <element signature="n#!!block;n#payToll#0" expanded="false" />
                 <element signature="n#!!block;n#toll_collect#0" expanded="false" />
                 <element signature="n#!!block;n#getCWBalance#0" expanded="false" />
-                <element signature="n#!!block;n#getCWPrice#0" expanded="false" />
-                <element signature="n#!!block;n#getCWAvailability#0" expanded="false" />
-                <element signature="n#!!block;n#car_wash#0" expanded="false" />
                 <element signature="n#!!block;n#getParkingBalance#0" expanded="false" />
                 <element signature="n#!!block;n#getParkingAvailability#0" expanded="false" />
                 <element signature="n#!!block;n#car_parking#0" expanded="false" />
@@ -48,11 +45,9 @@
       <file leaf-file-name="uber.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/uber/uber.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
+            <state relative-caret-position="1360">
               <caret line="85" column="54" lean-forward="false" selection-start-line="85" selection-start-column="54" selection-end-line="85" selection-end-column="54" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -60,11 +55,9 @@
       <file leaf-file-name="parking.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/carPark/parking.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-259">
-              <caret line="85" column="63" lean-forward="false" selection-start-line="85" selection-start-column="63" selection-end-line="85" selection-end-column="63" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="17">
+              <caret line="86" column="93" lean-forward="false" selection-start-line="86" selection-start-column="93" selection-end-line="86" selection-end-column="93" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -72,11 +65,9 @@
       <file leaf-file-name="toll_collect.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/tollCollect/toll_collect.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
+            <state relative-caret-position="1360">
               <caret line="85" column="55" lean-forward="false" selection-start-line="85" selection-start-column="55" selection-end-line="85" selection-end-column="55" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -84,8 +75,8 @@
       <file leaf-file-name="car_wash.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/carWash/car_wash.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-123">
-              <caret line="85" column="50" lean-forward="true" selection-start-line="85" selection-start-column="50" selection-end-line="85" selection-end-column="50" />
+            <state relative-caret-position="1564">
+              <caret line="97" column="45" lean-forward="false" selection-start-line="97" selection-start-column="45" selection-end-line="97" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -125,6 +116,8 @@
       <find>uber</find>
       <find>empty</find>
       <find>readhhy</find>
+      <find>avail</find>
+      <find>car_parking</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -142,10 +135,10 @@
         <option value="$PROJECT_DIR$/controllers/items.php" />
         <option value="$PROJECT_DIR$/views/js/fit/xscripts.js" />
         <option value="$PROJECT_DIR$/views/index.php" />
-        <option value="$PROJECT_DIR$/views/carPark/parking.php" />
-        <option value="$PROJECT_DIR$/views/carWash/car_wash.php" />
         <option value="$PROJECT_DIR$/views/uber/uber.php" />
         <option value="$PROJECT_DIR$/views/tollCollect/toll_collect.php" />
+        <option value="$PROJECT_DIR$/views/carWash/car_wash.php" />
+        <option value="$PROJECT_DIR$/views/carPark/parking.php" />
         <option value="$PROJECT_DIR$/views/js/fit/fit.js" />
       </list>
     </option>
@@ -158,10 +151,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="1" />
+    <option name="y" value="1" />
+    <option name="width" value="1278" />
+    <option name="height" value="726" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -180,6 +173,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -272,7 +266,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -383,18 +376,20 @@
       <workItem from="1497569285056" duration="1882000" />
       <workItem from="1497571197113" duration="2421000" />
       <workItem from="1497575231889" duration="2101000" />
+      <workItem from="1497598971567" duration="1820000" />
+      <workItem from="1497600863121" duration="871000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51755000" />
+    <option name="totallyTimeSpent" value="54446000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
+    <frame x="1" y="1" width="1278" height="726" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1193265" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12916006" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32913387" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.49707174" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -485,9 +480,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -509,7 +501,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-595">
           <caret line="97" column="16" lean-forward="false" selection-start-line="97" selection-start-column="16" selection-end-line="97" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -517,7 +508,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="289" column="27" lean-forward="false" selection-start-line="289" selection-start-column="27" selection-end-line="289" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -544,7 +534,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
           <caret line="228" column="16" lean-forward="false" selection-start-line="228" selection-start-column="16" selection-end-line="228" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -567,14 +556,11 @@
         <state relative-caret-position="17">
           <caret line="8" column="35" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="8" selection-end-column="35" />
           <folding>
-            <element signature="e#107#979#0" expanded="false" />
             <element signature="n#!!block;n#getBalance#0" expanded="false" />
             <element signature="n#!!block;n#getTollBalance#0" expanded="false" />
+            <element signature="n#!!block;n#payToll#0" expanded="false" />
             <element signature="n#!!block;n#toll_collect#0" expanded="false" />
             <element signature="n#!!block;n#getCWBalance#0" expanded="false" />
-            <element signature="n#!!block;n#getCWPrice#0" expanded="false" />
-            <element signature="n#!!block;n#getCWAvailability#0" expanded="false" />
-            <element signature="n#!!block;n#car_wash#0" expanded="false" />
             <element signature="n#!!block;n#getParkingBalance#0" expanded="false" />
             <element signature="n#!!block;n#getParkingAvailability#0" expanded="false" />
             <element signature="n#!!block;n#car_parking#0" expanded="false" />
@@ -590,14 +576,11 @@
         <state relative-caret-position="136">
           <caret line="8" column="35" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="8" selection-end-column="35" />
           <folding>
-            <element signature="e#107#979#0" expanded="false" />
             <element signature="n#!!block;n#getBalance#0" expanded="false" />
             <element signature="n#!!block;n#getTollBalance#0" expanded="false" />
+            <element signature="n#!!block;n#payToll#0" expanded="false" />
             <element signature="n#!!block;n#toll_collect#0" expanded="false" />
             <element signature="n#!!block;n#getCWBalance#0" expanded="false" />
-            <element signature="n#!!block;n#getCWPrice#0" expanded="false" />
-            <element signature="n#!!block;n#getCWAvailability#0" expanded="false" />
-            <element signature="n#!!block;n#car_wash#0" expanded="false" />
             <element signature="n#!!block;n#getParkingBalance#0" expanded="false" />
             <element signature="n#!!block;n#getParkingAvailability#0" expanded="false" />
             <element signature="n#!!block;n#car_parking#0" expanded="false" />
@@ -612,14 +595,11 @@
         <state relative-caret-position="340">
           <caret line="20" column="43" lean-forward="false" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
           <folding>
-            <element signature="e#107#979#0" expanded="false" />
             <element signature="n#!!block;n#getBalance#0" expanded="false" />
             <element signature="n#!!block;n#getTollBalance#0" expanded="false" />
+            <element signature="n#!!block;n#payToll#0" expanded="false" />
             <element signature="n#!!block;n#toll_collect#0" expanded="false" />
             <element signature="n#!!block;n#getCWBalance#0" expanded="false" />
-            <element signature="n#!!block;n#getCWPrice#0" expanded="false" />
-            <element signature="n#!!block;n#getCWAvailability#0" expanded="false" />
-            <element signature="n#!!block;n#car_wash#0" expanded="false" />
             <element signature="n#!!block;n#getParkingBalance#0" expanded="false" />
             <element signature="n#!!block;n#getParkingAvailability#0" expanded="false" />
             <element signature="n#!!block;n#car_parking#0" expanded="false" />
@@ -648,7 +628,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="608">
           <caret line="86" column="16" lean-forward="true" selection-start-line="86" selection-start-column="16" selection-end-line="86" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -656,7 +635,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="437" column="4" lean-forward="false" selection-start-line="437" selection-start-column="4" selection-end-line="437" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -706,7 +684,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-595">
           <caret line="97" column="16" lean-forward="false" selection-start-line="97" selection-start-column="16" selection-end-line="97" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -714,7 +691,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="289" column="27" lean-forward="false" selection-start-line="289" selection-start-column="27" selection-end-line="289" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -741,7 +717,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
           <caret line="228" column="16" lean-forward="false" selection-start-line="228" selection-start-column="16" selection-end-line="228" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -777,9 +752,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/tollCollect/toll_collect.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="85" column="55" lean-forward="false" selection-start-line="85" selection-start-column="55" selection-end-line="85" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/uber/uber.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="85" column="54" lean-forward="false" selection-start-line="85" selection-start-column="54" selection-end-line="85" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -791,57 +779,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/carPark/parking.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-259">
-          <caret line="85" column="63" lean-forward="false" selection-start-line="85" selection-start-column="63" selection-end-line="85" selection-end-column="63" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/tollCollect/toll_collect.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="85" column="55" lean-forward="false" selection-start-line="85" selection-start-column="55" selection-end-line="85" selection-end-column="55" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/carWash/car_wash.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-123">
-          <caret line="85" column="50" lean-forward="true" selection-start-line="85" selection-start-column="50" selection-end-line="85" selection-end-column="50" />
+        <state relative-caret-position="1564">
+          <caret line="97" column="45" lean-forward="false" selection-start-line="97" selection-start-column="45" selection-end-line="97" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/uber/uber.php">
+    <entry file="file://$PROJECT_DIR$/views/carPark/parking.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="85" column="54" lean-forward="false" selection-start-line="85" selection-start-column="54" selection-end-line="85" selection-end-column="54" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="86" column="93" lean-forward="false" selection-start-line="86" selection-start-column="93" selection-end-line="86" selection-end-column="93" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/js/fit/fit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="157" column="30" lean-forward="false" selection-start-line="157" selection-start-column="30" selection-end-line="157" selection-end-column="30" />
+        <state relative-caret-position="4335">
+          <caret line="417" column="18" lean-forward="true" selection-start-line="417" selection-start-column="18" selection-end-line="417" selection-end-column="18" />
           <folding>
-            <element signature="e#107#979#0" expanded="false" />
             <element signature="n#!!block;n#getBalance#0" expanded="false" />
             <element signature="n#!!block;n#getTollBalance#0" expanded="false" />
+            <element signature="n#!!block;n#payToll#0" expanded="false" />
             <element signature="n#!!block;n#toll_collect#0" expanded="false" />
             <element signature="n#!!block;n#getCWBalance#0" expanded="false" />
-            <element signature="n#!!block;n#getCWPrice#0" expanded="false" />
-            <element signature="n#!!block;n#getCWAvailability#0" expanded="false" />
-            <element signature="n#!!block;n#car_wash#0" expanded="false" />
             <element signature="n#!!block;n#getParkingBalance#0" expanded="false" />
             <element signature="n#!!block;n#getParkingAvailability#0" expanded="false" />
             <element signature="n#!!block;n#car_parking#0" expanded="false" />

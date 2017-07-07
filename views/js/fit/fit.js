@@ -394,7 +394,8 @@ function getCWAvailability() {
         success: function (result) {
             console.log(result.result.message);
 			// TODO change availability
-            //$("#avl").html((result.result.message)?"Yes":"No");
+
+            $("#avl").html((result.result.message == "true")?"Yes":"No");
         },
         error: function (error) {
             alert(error.statusText);
@@ -405,6 +406,53 @@ function getCWAvailability() {
 
 function car_wash() {
     var price = getCWPrice();
+    if($("#avl").html() == "Yes") {
+        var result_data = null;
+        var request = {
+            "jsonrpc": "2.0",
+            "method": "invoke",
+            "params": {
+                "type": 1,
+                "chaincodeID": {
+                    "name": "42602ab0d80c9fec2ed8c796989121bffc98ce51634e260d7b82d6047371da6ec9632c755da605e565f20844c13a20fcc807cd0394e5dd65063b395d38538a4c"
+                },
+                "ctorMsg": {
+                    "function": "pay",
+                    "args": [
+                        price
+                    ]
+                },
+                "secureContext": "admin"
+            },
+            "id": 2
+        };
+        var json_request = JSON.stringify(request);
+
+
+        $.ajax({
+            url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
+            async: false,
+            type: 'post',
+            dataType: 'json',
+            data: json_request,
+            success: function (result) {
+                acquire();
+                spend(price, "carwash");
+            },
+            error: function (error) {
+                alert(error.statusText);
+                console.log(error);
+            }
+
+        });
+    }
+    else
+    {
+        alert("Not Available this time, come back later!");
+    }
+}
+
+function acquire(){
     var result_data = null;
     var request = {
         "jsonrpc": "2.0",
@@ -415,9 +463,9 @@ function car_wash() {
                 "name": "42602ab0d80c9fec2ed8c796989121bffc98ce51634e260d7b82d6047371da6ec9632c755da605e565f20844c13a20fcc807cd0394e5dd65063b395d38538a4c"
             },
             "ctorMsg": {
-                "function": "pay",
+                "function": "toggle",
                 "args": [
-                    price
+
                 ]
             },
             "secureContext": "admin"
@@ -434,7 +482,7 @@ function car_wash() {
         dataType: 'json',
         data: json_request,
         success: function (result) {
-            spend(price,"carwash");
+
         },
         error: function (error) {
             alert(error.statusText);

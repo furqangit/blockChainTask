@@ -84,7 +84,7 @@
                                                    data-offstyle="danger">
                                             <script>
                                                 $(function () {
-                                                    //$($('#btnCarPark')).prop('disabled', !$(this).prop('checked'));
+                                                    $($('#btnCarPark')).prop('disabled', !$(this).prop('checked'));
                                                     $('#toggle-trigger').change(function () {
                                                         var toggle_value = $(this).prop('checked');
                                                         var button = $('#btnCarPark');
