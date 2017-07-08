@@ -71,6 +71,7 @@
                                         <th>Company</th>
                                         <th>Availability</th>
                                         <th>Balance ($)</th>
+                                        <th>Price ($)</th>
                                     </tr>
                                     </thead>
                                     <tbody id="car_wash_data">
@@ -82,21 +83,39 @@
                                                    data-offstyle="danger">
                                             <script>
                                                 $(function () {
-                                                    $($('#btnCarWash')).prop('disabled', !$(this).prop('checked'));
+
+													// $('#toggle-trigger').bootstrapToggle('off');
+													$('#btnCarWash').prop('disabled', true);
+													if($('#toggle-trigger').prop('checked')){
+														console.log("toggle: checked");
+														$('#warningMsg_toggleOn').show();
+														$('#warningMsg_toggleOff').hide();
+													}else{
+														console.log("toggle: unchecked");
+														$('#warningMsg_toggleOn').hide();
+														$('#warningMsg_toggleOff').show();
+														$('#toggle-trigger').bootstrapToggle('disable');
+													}
+
                                                     $('#toggle-trigger').change(function () {
-                                                        var toggle_value = $(this).prop('checked');
+                                                        var toggle_value = $($('#toggle-trigger')).prop('checked');
                                                         var button = $('#btnCarWash');
-                                                        if (toggle_value) {
-                                                            $(button).prop('disabled', true);
+
+                                                        if (!toggle_value) {
+                                                            $(button).prop('disabled', false);
+															$('#warningMsg_toggleOn').hide();
                                                         }
                                                         else {
-                                                            $(button).prop('disabled', false);
+                                                            $(button).prop('disabled', true);
+															$('#warningMsg_toggleOn').show();
+
                                                         }
                                                     })
                                                 })
                                             </script>-->
                                         </td>
                                         <td id="cwBal"></td>
+                                        <td id="cwPrc"></td>
                                     </tb>
                                     </tbody>
                                 </table>
@@ -106,8 +125,17 @@
                                         class="btn btn-primary pull-right">
                                     <span class="glyphicon glyphicon-refresh"></span> Wash Car
                                 </button>
-                                <br>
+                                <button type="button" id="btnSendToScreen" onclick="wash_screen()"
+                                        class="btn btn-primary">
+                                    <span class="glyphicon glyphicon-send"></span> Send data to screen
+                                </button>
+                                <button type="button" id="btnPullRfid" onclick="pull_rfid()"
+                                        class="btn btn-primary">
+                                    <span class="glyphicon glyphicon-bell"></span> Pull data
+                                </button>
                             </form>
+                            <a href="#" id="warningMsg_toggleOn">* Please first switch the availability status to wash!</a>
+                            <a href="#" id="warningMsg_toggleOff">* Please wait for current car to finish!</a>
                         </div>
                     </div>
                 </div>
