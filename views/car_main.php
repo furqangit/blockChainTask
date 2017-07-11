@@ -21,6 +21,7 @@
     <!-- Extra imports for FIT coin -->
     <link rel="stylesheet" type="text/css" href="css/fit/fit.css">
     <script type="text/javascript" src="js/fit/fit.js"></script>
+    <script type="text/javascript" src="js/fit/blocks.js"></script>
     <script type="text/javascript" src="./scripts/jquery.min.js"></script>
 </head>
 <body>

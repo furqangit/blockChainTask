@@ -8,6 +8,12 @@
    * Time: 4:45 PM
    */
   ?>
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,6 +26,7 @@
     <script src="js/bootstrap.min.js"></script>
     <!-- Extra imports for FIT coin -->
     <link rel="stylesheet" type="text/css" href="css/fit/fit.css">
+    <script type="text/javascript" src="js/fit/blocks.js"></script>
     <!--
 	<script type="text/javascript" src="js/fit/fit.js"></script>
 	-->
@@ -40,30 +47,44 @@
 			<span class="glyphicon glyphicon-refresh"></span> Add new block</button>
 	</div>
 	<script>
-		var addNewBlock = function () {
+		var addNewBlock = function (block) {
+		    var gen_data = {
+		        Hash: block.stateHash.substr(0,8)+'..',
+                ChainCodes: block.transactions.length,
+            }
 			$("#blockContainer")
 				.append($('<div class="col-sm-2">')
 					.append($('<div class="jumbotron text-center">')
 						.append($('<div class="row">')
-							.append($('<h4>')
-								.text("Block hash no and info")
+							.append($('<p style="font-size: small">')
+								.html(getHtmlString(block))
 							)
+
 						)
 					)
 				)
 		};
+
+		var getHtmlString =  function (block) {
+		    var html = "Block-Hash: "+block.stateHash.substr(0,5)+".. ";
+            html= html+"<tr><th>tID</th><th>tTime</th><th>Serivice</th></tr>";
+            for (var i = 0; i < block.transactions.length; i++) {
+                var tx = block.transactions[i];
+                var id = tx.txid; // Transaction ID
+                var txTime = new Date(1000 * tx.timestamp.seconds); // Transaction time
+                var payload = atob(tx.payload).substring(143).replace(/[\x00-\x1F\x7F-\x9F]/g, " ").replace(/  /g, " "); // Transaction data like "carwash pay 50"
+                html = html+"<tr><td style='font-size: xx-small'>"+id+"</td>";
+                html = html+"<td style='font-size: xx-small'>"+txTime+"</td>";
+                html = html+"<td style='font-size: xx-small'>"+payload+"</td></tr>";
+            }
+
+		    return html;
+        }
 	</script>
 
 	<hr></hr>
     <!-- Main start -->
     <div class="container-fluid" id="blockContainer">
-        <div class="col-sm-2">
-			<div class="jumbotron text-center">
-			  <div class="row">
-				<h4>Block hash no and info</h4>
-			  </div>
-			</div>
-		</div>
     </div>
 	
     <!-- Footer -->

@@ -17,8 +17,11 @@
       <script src="../js/jquery-3.2.1.js"></script>
       <script src="../js/bootstrap.min.js"></script>
       <link rel="stylesheet" href="timeline.css">
+
 	  <script>
-		var addNewBlock = function () {
+
+		var addNewBlock = function (block) {
+		    console.log(block);
 			//var currentTime = new Date().getHours()+":"+new Date().getMinutes()+":"+new Date().getSeconds();
 			var currentTime = new Date().getTime();
 			$(".timeline")
@@ -26,7 +29,7 @@
 					.append($('<div class="direction-l">')
 						.append($('<div class="flag-wrapper">')
 							.append($('<span class="flag">')
-								.text(currentTime)
+                                .text(block.stateHash[5])
 							)
 						)
 						.append($('<img class="chain_img" onclick="updateBlockInfo($(this))" style="cursor: pointer;" src="chain.png">')
