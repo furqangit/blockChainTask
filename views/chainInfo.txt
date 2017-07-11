@@ -83,13 +83,32 @@ Like this
 
 function get_metadata() {
     $.ajax({
-        url: "PUT URL HERE",
+        url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chain",
         type: 'get',
-        success: function (result) {
-            process_metadata(result);
-            setTimeout(function() { // repeat every 2 seconds
-                get_metadata();
-            }, 2000);
+        success: function (chainInfo) {
+        	var height = chainInfo.height;
+        	if (height > previousHeight) { // You need to create previousHeight as a global variable 
+        		previousHeight = height;
+        		var blockId = chainInfo.currentBlockHash; 
+        		// display new block with this id here!
+        		$.ajax({
+	            	url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chain/blocks/" + (height - 1),
+	            	type: "get",
+	            	success: function (blockInfo) {
+	            		process_metadata(blockInfo);
+			            setTimeout(function() { // repeat every 3 seconds
+			                get_metadata();
+			            }, 3000);	
+	            	},
+	            	error: function(error) {
+	            		console.log(error);
+	            	}
+            	});
+        	} else {
+        		setTimeout(function() { // repeat every 3 seconds
+	                get_metadata();
+	            }, 3000);	
+        	}
         },
         error: function (error) {
             console.log(error);
