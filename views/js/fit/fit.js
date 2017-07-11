@@ -4,7 +4,7 @@ function alertFunc() {
  var height = 0;
  var last_timestamp = 0;
  var rfid_codes = {
-    "carwash": "5b36312c2032362c2037352c203131342c2033305d"
+    "carwash": "5b36312c203139322c2033392c2039382c203138345d"
  }
 $(document).ready(function() {
 

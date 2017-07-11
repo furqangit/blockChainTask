@@ -1,0 +1,103 @@
+Step 1. Chain info
+
+GET URL
+https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chain
+
+RESULT
+{
+  "height": 275,
+  "currentBlockHash": "yGOO3rwDjWFNJJ6XzWZF1rvJE+swiklcA98bYGZPzxQu70J8pcAJTrWVoEpljjAjOvawiNlLcyBs98CZXJLnMA==",
+  "previousBlockHash": "EKhOtVxvWZBybifu2w1Fehq1FgvAe7fo5i235XBUwMbs1nzkjW3HBzIhhQ4G54xL/1gZGhF3pNVFdNC7Cvyq4g=="
+}
+
+Step 2. Block info
+
+GET URL
+https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chain/blocks/<BLOCK>
+where <BLOCK> equals anything less than height-1 (274 in our current case)
+
+RESULT
+
+{
+  "transactions": [
+    {
+      "type": 2,
+      "chaincodeID": "EoABNDI2MDJhYjBkODBjOWZlYzJlZDhjNzk2OTg5MTIxYmZmYzk4Y2U1MTYzNGUyNjBkN2I4MmQ2MDQ3MzcxZGE2ZWM5NjMyYzc1NWRhNjA1ZTU2NWYyMDg0NGMxM2EyMGZjYzgwN2NkMDM5NGU1ZGQ2NTA2M2IzOTVkMzg1MzhhNGM=",
+      "payload": "CpMBCAESgwESgAE0MjYwMmFiMGQ4MGM5ZmVjMmVkOGM3OTY5ODkxMjFiZmZjOThjZTUxNjM0ZTI2MGQ3YjgyZDYwNDczNzFkYTZlYzk2MzJjNzU1ZGE2MDVlNTY1ZjIwODQ0YzEzYTIwZmNjODA3Y2QwMzk0ZTVkZDY1MDYzYjM5NWQzODUzOGE0YxoJCgNwYXkKAjUw",
+      "txid": "e8584cf6-c645-45fc-8757-4b622d0c46e5",
+      "timestamp": {
+        "seconds": 1499416853,
+        "nanos": 886345762
+      },
+      "nonce": "5oCsFxbSx8AjoFXFnsWzuaYBkAz8vIpg",
+      "cert": "MIICMjCCAdigAwIBAgIRANRr0HhXPEOTtGaE6e4NjoUwCgYIKoZIzj0EAwMwKTELMAkGA1UEBhMCVVMxDDAKBgNVBAoTA0lCTTEMMAoGA1UEAxMDdGNhMB4XDTE3MDcwNzA4Mzg0M1oXDTE3MTAwNTA4Mzg0M1owPTELMAkGA1UEBhMCVVMxDDAKBgNVBAoTA0lCTTEgMB4GA1UEAxMXVHJhbnNhY3Rpb24gQ2VydGlmaWNhdGUwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAATWgzykKYjMjnv71xTQP7QiFhZmcO1frRPtgIU3sj/bqtMu3gBmT0VOr/fFYpbb8/6yRJIDD+qDUOBJtK86YbFEo4HMMIHJMA4GA1UdDwEB/wQEAwIHgDAMBgNVHRMBAf8EAjAAMA0GA1UdDgQGBAQBAgMEMA8GA1UdIwQIMAaABAECAwQwTQYGKgMEBQYHAQH/BEDEp8QTAs1FpWVEHExtT+NOW2p7brvYW5OGMPrSqCRovTKybpF2imyszjuCM65REmwSxDc7KmXg9Q34oD+NvPxGMDoGBioDBAUGCAQwp1nFPbDqtR24OHevjjHvO4BxgoJRonCcxOl7JTnggLNVuvn/pSH14jJIu7UKqbdxMAoGCCqGSM49BAMDA0gAMEUCIQDX2Y15otHIXsAbNQ7r9+JMjdB4pQHsGQEZCnxoj25icgIgT2er75iMxMCYsh7FISpNMNHu2Sz/PtnTsQaz2CHYpA0=",
+      "signature": "MEUCIAtCLkLw6iGArGKOZbvh6EffhDX7bnF8NU/xp+Gku7pcAiEA9tGu79rYV4/2yWs1RFzz0j1/SIZdDjemY+atBVcfA2Q="
+    },
+    {
+      "type": 2,
+      "chaincodeID": "EoABMTcwNTYwYzI2YmNhNzIxZjE2M2VhOGViODZkOGVlNDlkMDkyN2VhYmY3ZWM0ZDlmMzc3OTg4MDgxNzAxNTY2MmNmMDg0MWNkMjNiNDg5YjkyYzYwNzE2MmI0MjM3NGNkNTExNjM3YTc3OTdiMzk2N2I2OTNjNmFlNzhlMjJjYjQ=",
+      "payload": "Cp4BCAESgwESgAExNzA1NjBjMjZiY2E3MjFmMTYzZWE4ZWI4NmQ4ZWU0OWQwOTI3ZWFiZjdlYzRkOWYzNzc5ODgwODE3MDE1NjYyY2YwODQxY2QyM2I0ODliOTJjNjA3MTYyYjQyMzc0Y2Q1MTE2MzdhNzc5N2IzOTY3YjY5M2M2YWU3OGUyMmNiNBoUCgVzcGVuZAoCNTAKB2Nhcndhc2g=",
+      "txid": "c7605775-c409-455c-82aa-ec39c0304c10",
+      "timestamp": {
+        "seconds": 1499416854,
+        "nanos": 86497957
+      },
+      "nonce": "UEHoHJrpCftPORY8fCQfI/csHDLEzo41",
+      "cert": "MIICMzCCAdigAwIBAgIRAOSk6d8iskJTmf/AxqcLoicwCgYIKoZIzj0EAwMwKTELMAkGA1UEBhMCVVMxDDAKBgNVBAoTA0lCTTEMMAoGA1UEAxMDdGNhMB4XDTE3MDcwNzA4Mzg0M1oXDTE3MTAwNTA4Mzg0M1owPTELMAkGA1UEBhMCVVMxDDAKBgNVBAoTA0lCTTEgMB4GA1UEAxMXVHJhbnNhY3Rpb24gQ2VydGlmaWNhdGUwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAARHFQiKoH3/++/fM7+0oNZCc4Ac1CMcd6F6JVTGXv8px+cxEFfltluva7ZYOCg8rmDfuR6CMD9UdfgeZiiuCwoFo4HMMIHJMA4GA1UdDwEB/wQEAwIHgDAMBgNVHRMBAf8EAjAAMA0GA1UdDgQGBAQBAgMEMA8GA1UdIwQIMAaABAECAwQwTQYGKgMEBQYHAQH/BECo/0l4PzkvQus0yR5BxSa/HSQyoWj80dMkBQA2FRuAMjDPtZtWgXnXcKxNQXHuyX+ylhpuWJJwTC4hIckqDeZKMDoGBioDBAUGCAQwlVYr8f+LYyGFo7Lvmh74tmFBoH8a8jWv8bkDT5a1op4VgB+BXoVhrnPE00wX8NWgMAoGCCqGSM49BAMDA0kAMEYCIQC8QqiPjG3yMWzz6tsMpIg7Tw7u777XI5OD00T7uqlIKAIhAI5KarBsmuypPnhlusvm+Pj3gmmaXE60DFFFqENUwuL0",
+      "signature": "MEQCIDwXqVExb4gKvJWednjUTpxtqATN5/BPeMAV3X8a/PcqAiAmK4He1eJEAzCQrBtEGa6qINkGGQjDokt5p4n7VWWy9A=="
+    }
+  ],
+  "stateHash": "H65zhRCO+b1PUzEgVkhQVIXCHSfcfq4Vh6uVJLWVnVhAHFayumXNVin7wHSLpDGYuE6Z7f+FYLBQtWP7sq+9sw==",
+  "previousBlockHash": "EKhOtVxvWZBybifu2w1Fehq1FgvAe7fo5i235XBUwMbs1nzkjW3HBzIhhQ4G54xL/1gZGhF3pNVFdNC7Cvyq4g==",
+  "consensusMetadata": "CJIC",
+  "nonHashData": {
+    "localLedgerCommitTimestamp": {
+      "seconds": 1499416854,
+      "nanos": 898601949
+    },
+    "chaincodeEvents": [
+      {},
+      {}
+    ]
+  }
+}
+
+STUFF WE NEED
+
+function process_metadata(result) {
+	var time = new Date(1000 * result.nonHashData.localLedgerCommitTimestamp.seconds); // Block commit time
+	for (var i = 0; i < result.transactions.length; i++) {
+		var tx = result.transactions[i];
+		var id = tx.txid: // Transaction ID
+		var txTime = new Date(1000 * tx.timestamp.seconds); // Transaction time
+		var payload = atob(tx.payload).substring(143).replace(/[\x00-\x1F\x7F-\x9F]/g, " ").replace(/  /g, " "); // Transaction data like "carwash pay 50"
+		// here use the GUI to diplay transaction info
+	}
+	// here display block info
+}
+
+
+Step 3. Put it all in an infinite timeout loop
+
+Like this
+
+function get_metadata() {
+    $.ajax({
+        url: "PUT URL HERE",
+        type: 'get',
+        success: function (result) {
+            process_metadata(result);
+            setTimeout(function() { // repeat every 2 seconds
+                get_metadata();
+            }, 2000);
+        },
+        error: function (error) {
+            console.log(error);
+        }
+    });
+}
+
+
+Or we can only pull the chain info to display last two blocks and later request the transactions info when needed
+
+
