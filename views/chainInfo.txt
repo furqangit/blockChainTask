@@ -92,7 +92,7 @@ function get_metadata() {
         		var blockId = chainInfo.currentBlockHash; 
         		// display new block with this id here!
         		$.ajax({
-	            	url: "",
+	            	url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chain/blocks/" + (height - 1),
 	            	type: "get",
 	            	success: function (blockInfo) {
 	            		process_metadata(blockInfo);
