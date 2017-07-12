@@ -47,7 +47,7 @@
 			<span class="glyphicon glyphicon-refresh"></span> Add new block</button>
 	</div>
 	<script>
-		var addNewBlock = function (block) {
+		var addNewBlock = function (block,num) {
 		    var gen_data = {
 		        Hash: block.stateHash.substr(0,8)+'..',
                 ChainCodes: block.transactions.length,
@@ -57,7 +57,7 @@
 					.append($('<div class="jumbotron text-center">')
 						.append($('<div class="row">')
 							.append($('<p style="font-size: small">')
-								.html(getHtmlString(block))
+								.html(getHtmlString(block,num))
 							)
 
 						)
@@ -65,9 +65,9 @@
 				)
 		};
 
-		var getHtmlString =  function (block) {
-		    var html = "Block-Hash: "+block.stateHash.substr(0,5)+".. ";
-            html= html+"<tr><th>tID</th><th>tTime</th><th>Serivice</th></tr>";
+		var getHtmlString =  function (block,num) {
+		    var html = "<h3 style='font-size: small;'><b>Block_"+num+"_Hash: </b>"+block.stateHash.substr(0,8)+".. </h3>";
+            html= html+"<table><tr><th>tID</th><th>tTime</th><th>Serivice</th></tr>";
             for (var i = 0; i < block.transactions.length; i++) {
                 var tx = block.transactions[i];
                 var id = tx.txid; // Transaction ID
@@ -77,7 +77,7 @@
                 html = html+"<td style='font-size: xx-small'>"+txTime+"</td>";
                 html = html+"<td style='font-size: xx-small'>"+payload+"</td></tr>";
             }
-
+            html = html+"</table>";
 		    return html;
         }
 	</script>
