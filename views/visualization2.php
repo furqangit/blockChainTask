@@ -19,8 +19,8 @@
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <!-- Extra imports for FIT coin -->
-    <link rel="stylesheet" type="text/css" href="css/fit/fit.css">
 	<script type="text/javascript" src="js/fit/blocks.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/fit/fit.css">
     <script type="text/javascript" src="./scripts/jquery.min.js"></script>
 </head>
 <body>
@@ -76,8 +76,8 @@
 				html = html+"<tr>";
 				html = html+"<th class='col-md-1' scope='row'>"+(i+1)+"</th>";
                 html = html+"<td class='col-md-5' style='word-break:break-all;'>"+id+"</td>";
-                html = html+"<td class='col-md-3' style='word-break:break-all;'>"+txTime+"</td>";
-                html = html+"<td class='col-md-3' style='word-break:break-all;'>"+payload+"</td>";
+                html = html+"<td class='col-md-3' style='word-break:break-word;'>"+txTime+"</td>";
+                html = html+"<td class='col-md-3' style='word-break:break-word;'>"+payload+"</td>";
 				html = html+"</tr>";
             }
 			html= html+"</tbody>";
@@ -87,6 +87,7 @@
 	<hr></hr>
     <!-- blockContainer starts -->
     <div class="container-fluid" id="blockContainer">
+
 <!-- Example block code
 <div class="col-sm-4">
 	<div class="jumbotron text-left">
@@ -114,8 +115,8 @@
 			<tr>
 			  <th class="col-md-1" scope="row">1</th>
 			  <td class="col-md-5" style="word-break:break-all;">d693dcdf3860f861cbf75273b8245c598832015787ea7b3192dcd4fde226a96f3c3a1578f31892c31beadc4a72a2ce7ee56bad91790c29e518604e35762580b3</td>
-			  <td class="col-md-3" style="word-break:break-all;">Thu Jun 01 2017 18:32:16 GMT+0200 (W. Europe Daylight Time)</td>
-			  <td class="col-md-3" style="word-break:break-all;">c5461e7c15bb8dc70f248c0e17073c3e338d31bb4d112 init hi there</td>
+			  <td class="col-md-3" style="word-break:break-word;">Thu Jun 01 2017 18:32:16 GMT+0200 (W. Europe Daylight Time)</td>
+			  <td class="col-md-3" style="word-break:break-word;">spend 50 carwash</td>
 			</tr>
 		  </tbody>
 		</table>
@@ -123,6 +124,7 @@
 </div>
 </div>
 -->
+
     </div>
 	<!-- blockContainer ends -->
     <!-- Footer -->
