@@ -24,16 +24,25 @@
     <script type="text/javascript" src="./scripts/jquery.min.js"></script>
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row" id="headerContainer">
-            <div class="col-sm-4" style="padding-left:50px;"><img src="images/fraunhofer.jpg" class="img-responsive"></div>
-            <div class="col-sm-4" style="text-align:center;">
-                <h1>Smart Vehicle Control System</h1>
-                <h2>Activity Log of Blocks</h2>
+	<div class="navbar navbar-fixed-top navbar-default" style="zoom: 0.7;">
+	 <div class="container-fluid">
+		<div class="row" id="headerContainer" style="background-color: #fff;">
+			<div class="col-sm-4" style="padding-left:50px;"><img src="images/fraunhofer.jpg" class="img-responsive"></div>
+			<div class="col-sm-4" style="text-align:center;">
+				<h1>Smart Vehicle Control System</h1>
+				<h2>Activity Log of Blocks</h2>
+				<style>
+					h2{
+						font-weight: bold;
+						color: #14856b;
+					}
+				</style>
 			</div>
-            <div class="col-sm-4"></div>
-        </div>
-    </div>
+			<div class="col-sm-4"></div>
+		</div>
+	 </div>
+	</div>
+	<br></br>
 	<script>
 		var addNewBlock = function (block,num) {
 		    var gen_data = {
