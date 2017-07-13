@@ -28,9 +28,9 @@
 </head>
 <body>
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-4"><img src="../images/fraunhofer.jpg" class="img-responsive"></div>
-        <div class="col-sm-4">
+    <div class="row" id="headerContainer">
+        <div class="col-sm-4" style="padding-left:50px;"><img src="../images/fraunhofer.jpg" class="img-responsive"></div>
+        <div class="col-sm-4" style="text-align:center;">
             <h1>Smart Vehicle Control System</h1></div>
         <div class="col-sm-4"></div>
     </div>

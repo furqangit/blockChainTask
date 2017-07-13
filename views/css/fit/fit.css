@@ -1,14 +1,17 @@
 body {
 	padding-top: 20px;
-  padding-bottom: 20px;
+	padding-bottom: 20px;
+}
+body> .container-fluid #headerContainer {
+	zoom: 0.7;
 }
 body> .container-fluid .row .col-sm-4 img {
 	float: left;
 	background-size: contain;
 }
-body> .container-fluid .row .col-sm-4 h1 {
-	position: relative;
-  top: 10px;
+body> .container-fluid .row .col-sm-4 h2 {
+	font-weight: bold;
+	color: #14856b;
 }
 .vcenter {
     text-align: center;
