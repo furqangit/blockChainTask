@@ -41,7 +41,7 @@
                 ChainCodes: block.transactions.length,
             }
 			$("#blockContainer")
-				.append($('<div class="col-sm-4">')
+				.append($('<div class="col-sm-3">')
 					.append($('<div class="jumbotron text-left">')
 						.append($('<div class="row">')
 							.append($('<table class="table table-hover table-sm">')
@@ -86,7 +86,7 @@
 	</script>
 	<hr></hr>
     <!-- blockContainer starts -->
-    <div class="container-fluid" id="blockContainer">
+    <div class="container-fluid" id="blockContainer" style="zoom: 0.8;">
 
 <!-- Example block code
 <div class="col-sm-4">
