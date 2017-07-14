@@ -31,7 +31,9 @@
 				.append($('<div class="direction-l">')
 					.append($('<div class="flag-wrapper">')
 						.append($('<span class="flag">')
-							.html("Block "+num+" : "+block.stateHash.substr(0,5)+"...")
+							.html("Block "+num+" : "+block.stateHash.substr(0,8)+"...")
+						)
+						.append($('<span class="active">')
 						)
 					)
 					.append($('<img class="chain_img" onclick="updateBlockInfo($(this),'+num+')" style="cursor: pointer;" src="chain.png">')
@@ -41,22 +43,33 @@
 		//$("body").animate({ scrollTop: $("body")[0].scrollHeight }, 500);
 	};
 	var updateBlockInfo = function (div,num) {
-		// make flag-wrapper green
-		// background-color:#14856b;
-		/*
-		var flag_path = "."+div.parent() + " .flag";
-		$(flag_path).style.background-color = "#14856b";
-		
-		div.style.top= 	 '40%';
-		div.style.right= '-70px';
-		div.style.width= '60px';
-		div.style.height='60px';
-		*/
-		
-		var path = "#" + div.parent().parent().attr('id') + " .flag";
+		var path = "#" + div.parent().parent().attr('id') + " .direction-l .flag";
+		console.log(path);
 		var index = ($(path).text()).split(" ")[1] - 1;
 		var block = arrBlocks[index];
-		//$("#detailsContainer .sidebar-nav-fixed .jumbotron h4").text(index);
+		// make flag-wrapper white default
+		$(".direction-l .flag").css('background-color', 'rgb(248,248,248)');
+		$(".direction-l .flag").css('color', 'black');
+		$(".direction-l .active").css('border-left-color', "rgb(248,248,248)");
+		// make flag-wrapper green of fraunhofer
+		$(path).css('background-color', '#14856b');
+		$(path).css('color', '#fff');
+		$("#" + div.parent().parent().attr('id') + " .direction-l .active").css('border-left-color', "#14856b");
+		// make rounded image white default
+		var default_path = ".direction-l .chain_img";
+		$(default_path).css('top','50%');
+		$(default_path).css('right','-65px');
+		$(default_path).css('width','50px');
+		$(default_path).css('height','50px');
+		$(default_path).css('background','rgb(248,248,248)');
+		// make rounded image green of fraunhofer
+		var img_path = "#" + div.parent().parent().attr('id') + " .direction-l .chain_img";
+		$(img_path).css('top','40%');
+		$(img_path).css('right','-70px');
+		$(img_path).css('width','60px');
+		$(img_path).css('height','60px');
+		$(img_path).css('background','#14856b');
+		
 		$("#detailsContainer .jumbotron").remove();
 		$("#detailsContainer")
 			.append($('<div class="jumbotron text-left">')
@@ -79,11 +92,11 @@
 						.html(getHtmlString(block, num))
 					)
 				)
-			)
+		);
 	};
 	var getHtmlString =  function (block, num) {
-		    var html = "<thead><tr><th>Job</th><th>tID</th><th>tTime</th><th>Service</th></tr></thead>";
-			html= html+"<tbody>";
+		    var html = "<thead><tr><th>Job</th><th>ID</th><th>Time</th><th>Service</th></tr></thead>";
+			html = html+"<tbody>";
             for (var i = 0; i < block.transactions.length; i++) {
                 var tx = block.transactions[i];
                 var id = tx.txid; // Transaction ID
@@ -130,14 +143,23 @@
                <ul class="timeline">
 					<!-- ---------------------- -->
 					<!-- | Items will be here | -->
-					<!-- ---------------------- -->
-					<!-- 
+					<!-- ---------------------- 
 					<li id="1">
 						<div class="direction-l">
 							<div class="flag-wrapper">
 								<span class="flag">1</span>
+								<span class="active"></span>
 							</div>
-							<img class="chain_img" onclick="updateBlockInfo($(this))" style="cursor: pointer;" src="chain.png">
+							<img class="chain_img" onclick="updateBlockInfo($(this),1)" style="cursor: pointer;" src="chain.png">
+						</div>
+					</li>
+					<li id="2">
+						<div class="direction-l">
+							<div class="flag-wrapper">
+								<span class="flag">2</span>
+								<span class="active"></span>
+							</div>
+							<img class="chain_img" onclick="updateBlockInfo($(this),1)" style="cursor: pointer;" src="chain.png">
 						</div>
 					</li>
 					-->
@@ -146,42 +168,45 @@
             <!-- appears in case of click -->
             <div class="col-md-5" id="detailsContainer">
 				<br></br><br></br>
-				<!-- ---------------------- -->
-				<!-- | Table will be here | -->
-				<!-- ---------------------- 
-				<div class="jumbotron text-left">
-					<div class="row">
-						<table class="table table-hover table-sm">
-						  <tbody>
-							<tr>
-							  <th class="col-md-6" scope="row">Block 1 Hash :</th>
-							  <td class="col-md-6" style="word-break:break-all;">d693dc580b3</td>
-							</tr>
-						  </tbody>
-						</table>
+					<div class="jumbotron text-left">
+						<h3>Please select a block for details</h3>
 					</div>
-					<div class="row">
-						<table class="table table-hover table-sm">
-						  <thead>
-							<tr>
-							  <th>Job</th>
-							  <th>tID</th>
-							  <th>tTime</th>
-							  <th>Service</th>
-							</tr>
-						  </thead>
-						  <tbody>
-							<tr>
-							  <th class="col-md-1" scope="row">1</th>
-							  <td class="col-md-5" style="word-break:break-all;">d693dcdf3860f861cbf75273b8245c598832015787ea7b3192dcd4fde226a96f3c3a1578f31892c31beadc4a72a2ce7ee56bad91790c29e518604e35762580b3</td>
-							  <td class="col-md-3" style="word-break:break-word;">Thu Jun 01 2017 18:32:16 GMT+0200 (W. Europe Daylight Time)</td>
-							  <td class="col-md-3" style="word-break:break-word;">spend 50 carwash</td>
-							</tr>
-						  </tbody>
-						</table>
+					<!-- ---------------------- -->
+					<!-- | Table will be here | -->
+					<!-- ---------------------- 
+					<div class="jumbotron text-left">
+						<div class="row">
+							<table class="table table-hover table-sm">
+							  <tbody>
+								<tr>
+								  <th class="col-md-6" scope="row">Block 1 Hash :</th>
+								  <td class="col-md-6" style="word-break:break-all;">0eQNoOfUG4TeleU1h3p7rNaEOGe0Hmn9sn6R2kVAJljl2dR8BwjB/wslbTegrMIqd9enxcYnXeAtxQO+j0WSKg==</td>
+								</tr>
+							  </tbody>
+							</table>
+						</div>
+						<div class="row">
+							<table class="table table-hover table-sm">
+							  <thead>
+								<tr>
+								  <th>Job</th>
+								  <th>tID</th>
+								  <th>tTime</th>
+								  <th>Service</th>
+								</tr>
+							  </thead>
+							  <tbody>
+								<tr>
+								  <th class="col-md-1" scope="row">1</th>
+								  <td class="col-md-5" style="word-break:break-all;">d693dcdf3860f861cbf75273b8245c598832015787ea7b3192dcd4fde226a96f3c3a1578f31892c31beadc4a72a2ce7ee56bad91790c29e518604e35762580b3</td>
+								  <td class="col-md-3" style="word-break:break-word;">Thu Jun 01 2017 18:32:16 GMT+0200 (W. Europe Daylight Time)</td>
+								  <td class="col-md-3" style="word-break:break-word;">spend 50 carwash</td>
+								</tr>
+							  </tbody>
+							</table>
+						</div>
 					</div>
-				</div>
-				-->
+					-->
             </div>
 			<div class="col-md-1"></div>
 			
