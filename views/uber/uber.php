@@ -25,9 +25,9 @@
 </head>
 <body>
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-4"><img src="../images/fraunhofer.jpg" class="img-responsive"></div>
-        <div class="col-sm-4">
+    <div class="row" id="headerContainer">
+        <div class="col-sm-4" style="padding-left:50px;"><img src="../images/fraunhofer.jpg" class="img-responsive"></div>
+        <div class="col-sm-4" style="text-align:center;">
             <h1>Smart Vehicle Control System</h1></div>
         <div class="col-sm-4"></div>
     </div>
@@ -81,7 +81,6 @@
                             </div>
                             <form>
                                 <div class="col-lg-12">
-
                                     <div class="col-lg-8">
                                         <label for="km">Kilometers</label>
                                         <input id="km" type="text" class="form-control">

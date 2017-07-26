@@ -6,47 +6,46 @@ function alertFunc() {
  var rfid_codes = {
     "carwash": "5b36312c203139322c2033392c2039382c203138345d"
  }
+
 $(document).ready(function() {
-
-    var data = {
-        "enrollId" : "admin",
-        "enrollSecret" : "dfb03c0214"
-    };
-    var data_json = JSON.stringify(data);
-
-    $.ajax({
-        url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/registrar",
-        type: 'post',
-        dataType: 'json',
-        data: data_json,
-        async: false,
-        success: function (result) {
-
-            getBalance();
-            getTollPrice();
-            getTollBalance();
-            getTollBalance();
-            getCWBalance();
-            getCWPrice();
-            getCWAvailability();
-            getParkingBalance();
-            getParkingPrice();
-            getParkingAvailability();
-            getUberBalance();
-            getUberPrice();
-        },
-        error: function(error)
-        {
-            alert("Unable to connect to chain code!");
-        }
-
-    });
-    last_timestamp = Date.now();
-    wash_screen();
-    pull_rfid(true);
-
-
+	getBalance();
 });
+
+function callMainData() {
+	var data = {
+		"enrollId" : "admin",
+		"enrollSecret" : "dfb03c0214"
+	};
+	var data_json = JSON.stringify(data);
+
+	$.ajax({
+		url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/registrar",
+		type: 'post',
+		dataType: 'json',
+		data: data_json,
+		async: false,
+		success: function (result) {
+			getBalance();
+			getTollPrice();
+			getTollBalance();
+			getTollBalance();
+			getCWBalance();
+			getCWPrice();
+			getCWAvailability();
+			getParkingBalance();
+			getParkingPrice();
+			getParkingAvailability();
+			getUberBalance();
+			getUberPrice();
+		},
+		error: function(error){
+			alert("Unable to connect to chain code!");
+		}
+	});
+	last_timestamp = Date.now();
+	wash_screen();
+	pull_rfid(true);
+}
 
 //----------- C A R--------------------------------------------------
 function getBalance() {
@@ -69,7 +68,6 @@ function getBalance() {
 
     var json_request = JSON.stringify(request);
 
-
     $.ajax({
         url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
         async:false,
@@ -77,7 +75,6 @@ function getBalance() {
         dataType: 'json',
         data: json_request,
         success: function (result) {
-            console.log(result.result.message);
             $("#bal").html(result.result.message);
         },
         error: function(error)
@@ -152,7 +149,6 @@ function earn(sum,source) {
     };
     var json_request = JSON.stringify(request);
 
-
     $.ajax({
         url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
         async: false,
@@ -169,6 +165,7 @@ function earn(sum,source) {
 
     });
 }
+
 //--------------T O L L-----------------------------------------------------
 function getTollPrice() {
     var result_data = null;
@@ -188,7 +185,6 @@ function getTollPrice() {
         "id": 2
     };
     var json_request = JSON.stringify(request);
-
 
     $.ajax({
         url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
@@ -226,7 +222,6 @@ function getTollBalance() {
         "id": 2
     };
     var json_request = JSON.stringify(request);
-
 
     $.ajax({
         url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
@@ -295,6 +290,7 @@ function toll_collect(){
         alert("Invalid Input");
     }
 }
+
 //-------------------C A R --- W A S H -------------------------------------
 function getCWBalance() {
     var result_data = null;
@@ -315,7 +311,6 @@ function getCWBalance() {
     };
     var json_request = JSON.stringify(request);
 
-
     $.ajax({
         url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
         async: false,
@@ -335,6 +330,7 @@ function getCWBalance() {
 function wash_screen() {
     var bal = $("#cwBal").html();
     var price = $("#cwPrc").html();
+
     $.ajax({
         url: "http://10.223.90.227:5000/lcd?line1=Carwash+Price%3A" + price +"&line2=Balance%3A" + bal,
         type: 'get',
@@ -350,6 +346,7 @@ function wash_screen() {
 
 function pull_rfid(repeat) {
     console.log("Pulling rfid");
+
     $.ajax({
         url: "http://10.223.90.227:5000/rfid/",
         type: 'get',
@@ -404,7 +401,6 @@ function getCWPrice() {
     };
     var json_request = JSON.stringify(request);
 
-
     $.ajax({
         url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
         async: false,
@@ -443,7 +439,6 @@ function getCWAvailability() {
     };
     var json_request = JSON.stringify(request);
 
-
     $.ajax({
         url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
         async: false,
@@ -451,15 +446,40 @@ function getCWAvailability() {
         dataType: 'json',
         data: json_request,
         success: function (result) {
-            console.log(result.result.message);
-			// TODO change availability
-
-            $("#avl").html((result.result.message == "true")?"Yes":"No");
+            //$("#avl").html((result.result.message == "true")?"Yes":"No");
+			// TODO: change availability status
+			if(result.result.message == "true") {
+				$('#wash_toggle-trigger').bootstrapToggle('on');
+				console.log("wash status: free");
+				$('#wash_warningMsg_toggleOn').show();
+				$('#wash_warningMsg_toggleOff').hide();
+			}
+			else {
+				$('#wash_toggle-trigger').bootstrapToggle('off');
+				console.log("wash status: full");
+				$('#wash_warningMsg_toggleOn').hide();
+				$('#wash_warningMsg_toggleOff').show();
+				// Switching the toggle enable is only possible with scanning RFID
+				$('#wash_toggle-trigger').bootstrapToggle('disable');
+			}
+			// Toggle settings for availability status of washing
+			$('#wash_toggle-trigger').change(function() {
+				var toggle_value = $($('#wash_toggle-trigger')).prop('checked');
+				var button = $('#btnCarWash');
+				if (!toggle_value) {
+					$(button).prop('disabled', false);
+					$('#wash_warningMsg_toggleOn').hide();
+					//TODO: ajax request for parking here
+					alert("call changeWashingAvailability() function here!");
+				} else {
+					$(button).prop('disabled', true);
+					$('#wash_warningMsg_toggleOn').show();
+				}
+			});
         },
         error: function (error) {
             alert(error.statusText);
         }
-
     });
 }
 
@@ -533,7 +553,6 @@ function acquire(){
     };
     var json_request = JSON.stringify(request);
 
-
     $.ajax({
         url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
         async: false,
@@ -550,6 +569,7 @@ function acquire(){
 
     });
 }
+
 //-----------------P A R K I N G -------------------------------
 function getParkingBalance() {
     var result_data = null;
@@ -569,7 +589,6 @@ function getParkingBalance() {
         "id": 2
     };
     var json_request = JSON.stringify(request);
-
 
     $.ajax({
         url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
@@ -646,7 +665,6 @@ function getParkingAvailability() {
     };
     var json_request = JSON.stringify(request);
 
-
     $.ajax({
         url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
         async: false,
@@ -654,14 +672,43 @@ function getParkingAvailability() {
         dataType: 'json',
         data: json_request,
         success: function (result) {
-            console.log(result.result.message);
-			// TODO change availability
-            //$("#prkAvl").html((result.result.message)?"Yes":"No");
+			//$("#prkAvl").html((result.result.message)?"Yes":"No");
+			// TODO: change availability status
+			if(result.result.message == "true") {
+				$('#park_toggle-trigger').bootstrapToggle('on');
+				console.log("park status: free");
+				$('#park_warningMsg_toggleOn').show();
+				$('#park_warningMsg_toggleOff').hide();
+			}
+			else {
+				$('#park_toggle-trigger').bootstrapToggle('off');
+				console.log("park status: full");
+				$('#park_warningMsg_toggleOn').hide();
+				$('#park_warningMsg_toggleOff').show();
+				// Switching the toggle enable is only possible with scanning RFID
+				$('#park_toggle-trigger').bootstrapToggle('disable');
+			}
+			// Toggle settings for availability status of parking
+			$('#park_toggle-trigger').change(function() {
+				var toggle_value = $('#park_toggle-trigger').prop('checked');
+				var button = $('#btnCarPark');
+				var input = $('#hrs');
+				if (!toggle_value) {
+					$(button).prop('disabled', false);
+					$(input).prop('disabled', false);
+					$('#park_warningMsg_toggleOn').hide();
+					//TODO: ajax request for parking here
+					alert("call changeParkingAvailability() function here!");
+				} else {
+					$(button).prop('disabled', true);
+					$(input).prop('disabled', true);
+					$('#park_warningMsg_toggleOn').show();
+				}
+			});
         },
         error: function (error) {
             alert(error.statusText);
         }
-
     });
 }
 
@@ -690,7 +737,6 @@ function car_parking() {
     };
     var json_request = JSON.stringify(request);
 
-
     $.ajax({
         url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
         async: false,
@@ -710,7 +756,6 @@ function car_parking() {
 }
 
 //------------------ U B E R --------------------------------------
-
 function getUberBalance() {
     var result_data = null;
     var request = {
@@ -729,7 +774,6 @@ function getUberBalance() {
         "id": 2
     };
     var json_request = JSON.stringify(request);
-
 
     $.ajax({
         url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
@@ -765,7 +809,6 @@ function getUberPrice(){
         "id": 2
     };
     var json_request = JSON.stringify(request);
-
 
     $.ajax({
         url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
@@ -813,7 +856,6 @@ function car_uber() {
     };
     var json_request = JSON.stringify(request);
 
-
     $.ajax({
         url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
         async: false,
@@ -834,10 +876,8 @@ function car_uber() {
 
 //_________________________________________________________________________________________________
 /*
-
 function checkHeight()
 {
-
     $.ajax({
         url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chain",
         async: false,
@@ -853,4 +893,5 @@ function checkHeight()
         }
 
     });
-}*/
+}
+*/
