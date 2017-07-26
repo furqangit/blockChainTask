@@ -1,10 +1,9 @@
 /* ================ The Timeline ================ */
 .timeline {
   position: relative;
-  width: 360px;
+  width: 290px;
   margin: 0 auto;
-  margin-top: -10px;
-  margin-left: -190px;
+  margin-top: -15px;
   padding: 1em 0;
   list-style-type: none;
   font-size: 112.5%;
@@ -12,13 +11,13 @@
 }
 .timeline:before {
   position: absolute;
-  left: 50%;
+  /*left: 50%;*/
   top: 0;
   content: ' ';
   display: block;
   width: 6px;
   height: 100%;
-  margin-left: 156px; /* placement of line */
+  margin-left: 145px; /* placement of line */
   background: rgb(80,80,80);
   background: -moz-linear-gradient(top, rgba(80,80,80,0) 0%, rgb(80,80,80) 8%, rgb(80,80,80) 92%, rgba(80,80,80,0) 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(30,87,153,1)), color-stop(100%,rgba(125,185,232,1)));
@@ -40,7 +39,7 @@
 }
 .direction-l {
   position: relative;
-  width: 300px;
+  width: 110px;
   float: left;
   text-align: right;
 }
