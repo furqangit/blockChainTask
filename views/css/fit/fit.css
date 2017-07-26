@@ -32,7 +32,7 @@ body> .container-fluid .col-sm-6 #exTab2 .nav-tabs li.active a{
 body> .container-fluid .col-sm-6 #exTab2 .nav-tabs > li, .nav-pills > li {
     float:none;
     display:inline-block;
-		font-weight: bold;
+	font-weight: bold;
 }
 body> .container-fluid .col-sm-6 #exTab2 .nav-tabs {
     text-align:center;
@@ -43,7 +43,7 @@ body> .container-fluid .col-md-2 #exTab2 .nav-tabs li.active a{
 body> .container-fluid .col-md-2 #exTab2 .nav-tabs > li, .nav-pills > li {
     float:none;
     display:inline-block;
-		font-weight: bold;
+	font-weight: bold;
 }
 body> .container-fluid .col-md-2 #exTab2 .nav-tabs {
     text-align:center;

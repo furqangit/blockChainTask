@@ -13,34 +13,34 @@ $(document).ready(function() {
 
 function callMainData() {
 	var data = {
-			"enrollId" : "admin",
-			"enrollSecret" : "dfb03c0214"
+		"enrollId" : "admin",
+		"enrollSecret" : "dfb03c0214"
 	};
 	var data_json = JSON.stringify(data);
 
 	$.ajax({
-			url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/registrar",
-			type: 'post',
-			dataType: 'json',
-			data: data_json,
-			async: false,
-			success: function (result) {
-					getBalance();
-					getTollPrice();
-					getTollBalance();
-					getTollBalance();
-					getCWBalance();
-					getCWPrice();
-					getCWAvailability();
-					getParkingBalance();
-					getParkingPrice();
-					getParkingAvailability();
-					getUberBalance();
-					getUberPrice();
-			},
-			error: function(error){
-					alert("Unable to connect to chain code!");
-			}
+		url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/registrar",
+		type: 'post',
+		dataType: 'json',
+		data: data_json,
+		async: false,
+		success: function (result) {
+			getBalance();
+			getTollPrice();
+			getTollBalance();
+			getTollBalance();
+			getCWBalance();
+			getCWPrice();
+			getCWAvailability();
+			getParkingBalance();
+			getParkingPrice();
+			getParkingAvailability();
+			getUberBalance();
+			getUberPrice();
+		},
+		error: function(error){
+			alert("Unable to connect to chain code!");
+		}
 	});
 	last_timestamp = Date.now();
 	wash_screen();
@@ -447,35 +447,35 @@ function getCWAvailability() {
         data: json_request,
         success: function (result) {
             //$("#avl").html((result.result.message == "true")?"Yes":"No");
-						// TODO: change availability status
-						if(result.result.message == "true") {
-								$('#wash_toggle-trigger').bootstrapToggle('on');
-								console.log("wash status: free");
-								$('#wash_warningMsg_toggleOn').show();
-								$('#wash_warningMsg_toggleOff').hide();
-						}
-						else {
-								$('#wash_toggle-trigger').bootstrapToggle('off');
-								console.log("wash status: full");
-								$('#wash_warningMsg_toggleOn').hide();
-								$('#wash_warningMsg_toggleOff').show();
-								// Switching the toggle enable is only possible with scanning RFID
-								$('#wash_toggle-trigger').bootstrapToggle('disable');
-						}
-						// Toggle settings for availability status of washing
-						$('#wash_toggle-trigger').change(function() {
-								var toggle_value = $($('#wash_toggle-trigger')).prop('checked');
-								var button = $('#btnCarWash');
-								if (!toggle_value) {
-										$(button).prop('disabled', false);
-										$('#wash_warningMsg_toggleOn').hide();
-										//TODO: ajax request for parking here
-										alert("call changeWashingAvailability() function here!");
-								} else {
-										$(button).prop('disabled', true);
-										$('#wash_warningMsg_toggleOn').show();
-								}
-						});
+			// TODO: change availability status
+			if(result.result.message == "true") {
+				$('#wash_toggle-trigger').bootstrapToggle('on');
+				console.log("wash status: free");
+				$('#wash_warningMsg_toggleOn').show();
+				$('#wash_warningMsg_toggleOff').hide();
+			}
+			else {
+				$('#wash_toggle-trigger').bootstrapToggle('off');
+				console.log("wash status: full");
+				$('#wash_warningMsg_toggleOn').hide();
+				$('#wash_warningMsg_toggleOff').show();
+				// Switching the toggle enable is only possible with scanning RFID
+				$('#wash_toggle-trigger').bootstrapToggle('disable');
+			}
+			// Toggle settings for availability status of washing
+			$('#wash_toggle-trigger').change(function() {
+				var toggle_value = $($('#wash_toggle-trigger')).prop('checked');
+				var button = $('#btnCarWash');
+				if (!toggle_value) {
+					$(button).prop('disabled', false);
+					$('#wash_warningMsg_toggleOn').hide();
+					//TODO: ajax request for parking here
+					alert("call changeWashingAvailability() function here!");
+				} else {
+					$(button).prop('disabled', true);
+					$('#wash_warningMsg_toggleOn').show();
+				}
+			});
         },
         error: function (error) {
             alert(error.statusText);
@@ -672,39 +672,39 @@ function getParkingAvailability() {
         dataType: 'json',
         data: json_request,
         success: function (result) {
-						//$("#prkAvl").html((result.result.message)?"Yes":"No");
-						// TODO: change availability status
-						if(result.result.message == "true") {
-								$('#park_toggle-trigger').bootstrapToggle('on');
-								console.log("park status: free");
-								$('#park_warningMsg_toggleOn').show();
-								$('#park_warningMsg_toggleOff').hide();
-						}
-						else {
-								$('#park_toggle-trigger').bootstrapToggle('off');
-								console.log("park status: full");
-								$('#park_warningMsg_toggleOn').hide();
-								$('#park_warningMsg_toggleOff').show();
-								// Switching the toggle enable is only possible with scanning RFID
-								$('#park_toggle-trigger').bootstrapToggle('disable');
-						}
-						// Toggle settings for availability status of parking
-						$('#park_toggle-trigger').change(function() {
-								var toggle_value = $('#park_toggle-trigger').prop('checked');
-								var button = $('#btnCarPark');
-								var input = $('#hrs');
-								if (!toggle_value) {
-										$(button).prop('disabled', false);
-										$(input).prop('disabled', false);
-										$('#park_warningMsg_toggleOn').hide();
-										//TODO: ajax request for parking here
-										alert("call changeParkingAvailability() function here!");
-								} else {
-										$(button).prop('disabled', true);
-										$(input).prop('disabled', true);
-										$('#park_warningMsg_toggleOn').show();
-								}
-						});
+			//$("#prkAvl").html((result.result.message)?"Yes":"No");
+			// TODO: change availability status
+			if(result.result.message == "true") {
+				$('#park_toggle-trigger').bootstrapToggle('on');
+				console.log("park status: free");
+				$('#park_warningMsg_toggleOn').show();
+				$('#park_warningMsg_toggleOff').hide();
+			}
+			else {
+				$('#park_toggle-trigger').bootstrapToggle('off');
+				console.log("park status: full");
+				$('#park_warningMsg_toggleOn').hide();
+				$('#park_warningMsg_toggleOff').show();
+				// Switching the toggle enable is only possible with scanning RFID
+				$('#park_toggle-trigger').bootstrapToggle('disable');
+			}
+			// Toggle settings for availability status of parking
+			$('#park_toggle-trigger').change(function() {
+				var toggle_value = $('#park_toggle-trigger').prop('checked');
+				var button = $('#btnCarPark');
+				var input = $('#hrs');
+				if (!toggle_value) {
+					$(button).prop('disabled', false);
+					$(input).prop('disabled', false);
+					$('#park_warningMsg_toggleOn').hide();
+					//TODO: ajax request for parking here
+					alert("call changeParkingAvailability() function here!");
+				} else {
+					$(button).prop('disabled', true);
+					$(input).prop('disabled', true);
+					$('#park_warningMsg_toggleOn').show();
+				}
+			});
         },
         error: function (error) {
             alert(error.statusText);

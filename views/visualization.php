@@ -78,15 +78,15 @@
 		    var html = "<thead><tr><th>Job</th><th>tID</th><th>tTime</th><th>Service</th></tr></thead>";
 			html= html+"<tbody>";
             for (var i = 0; i < block.transactions.length; i++) {
-                var tx = block.transactions[i];
-                var id = tx.txid; // Transaction ID
-                var txTime = (new Date(1000 * tx.timestamp.seconds)+"").split(" (")[0]; // Transaction time, get rid of unnecessary string
-                var payload = atob(tx.payload).substring(143).replace(/[\x00-\x1F\x7F-\x9F]/g, " ").replace(/  /g, " "); // Transaction data like "carwash pay 50"
+				var tx = block.transactions[i];
+				var id = tx.txid; // Transaction ID
+				var txTime = (new Date(1000 * tx.timestamp.seconds)+"").split(" (")[0]; // Transaction time, get rid of unnecessary string
+				var payload = atob(tx.payload).substring(143).replace(/[\x00-\x1F\x7F-\x9F]/g, " ").replace(/  /g, " "); // Transaction data like "carwash pay 50"
 				html = html+"<tr>";
 				html = html+"<th class='col-md-1' scope='row'>"+(i+1)+"</th>";
-                html = html+"<td class='col-md-5' style='word-break:break-all;'>"+id+"</td>";
-                html = html+"<td class='col-md-3' style='word-break:break-word;'>"+txTime+"</td>";
-                html = html+"<td class='col-md-3' style='word-break:break-word;'>"+payload+"</td>";
+				html = html+"<td class='col-md-5' style='word-break:break-all;'>"+id+"</td>";
+				html = html+"<td class='col-md-3' style='word-break:break-word;'>"+txTime+"</td>";
+				html = html+"<td class='col-md-3' style='word-break:break-word;'>"+payload+"</td>";
 				html = html+"</tr>";
             }
 			html= html+"</tbody>";
