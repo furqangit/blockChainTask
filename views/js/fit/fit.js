@@ -4,7 +4,10 @@ function alertFunc() {
  var height = 0;
  var last_timestamp = 0;
  var rfid_codes = {
-    "carwash": "5b36312c203139322c2033392c2039382c203138345d"
+    "carwash": "5b36312c203139322c2033392c2039382c203138345d",
+    "parking": "",
+    "toll": "",
+    "uber": ""
  }
 
 $(document).ready(function() {
@@ -43,7 +46,7 @@ function callMainData() {
 		}
 	});
 	last_timestamp = Date.now();
-	wash_screen();
+	display_data();
 	pull_rfid(true);
 }
 
@@ -55,7 +58,7 @@ function getBalance() {
         "params": {
             "type": 1,
             "chaincodeID": {
-                "name": "170560c26bca721f163ea8eb86d8ee49d0927eabf7ec4d9f3779880817015662cf0841cd23b489b92c607162b42374cd511637a7797b3967b693c6ae78e22cb4"
+                "name": "aada36766f1d10343c86daac7af7fddc3c75f6710ac28c09584a53da4dd2a608d13ad07fb02aad514b891c920eb284bcc07d077b7d191aef8dad2f58bf408300"
             },
             "ctorMsg": {
                 "function": "balance",
@@ -85,6 +88,43 @@ function getBalance() {
     });
 }
 
+function checkCarAvail() {
+    var request = {
+        "jsonrpc": "2.0",
+        "method": "query",
+        "params": {
+            "type": 1,
+            "chaincodeID": {
+                "name": "aada36766f1d10343c86daac7af7fddc3c75f6710ac28c09584a53da4dd2a608d13ad07fb02aad514b891c920eb284bcc07d077b7d191aef8dad2f58bf408300"
+            },
+            "ctorMsg": {
+                "function": "available",
+
+            },
+            "secureContext": "admin"
+        },
+        "id": 2
+    };
+
+    var json_request = JSON.stringify(request);
+
+    $.ajax({
+        url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
+        async:false,
+        type: 'post',
+        dataType: 'json',
+        data: json_request,
+        success: function (result) {
+            // DO STUFF HERE
+        },
+        error: function(error)
+        {
+            console.log(error.statusText);
+        }
+
+    });
+}
+
 function spend(sum,purpose) {
     var result_data = null;
     var request = {
@@ -93,7 +133,7 @@ function spend(sum,purpose) {
         "params": {
             "type": 1,
             "chaincodeID": {
-                "name": "170560c26bca721f163ea8eb86d8ee49d0927eabf7ec4d9f3779880817015662cf0841cd23b489b92c607162b42374cd511637a7797b3967b693c6ae78e22cb4"
+                "name": "aada36766f1d10343c86daac7af7fddc3c75f6710ac28c09584a53da4dd2a608d13ad07fb02aad514b891c920eb284bcc07d077b7d191aef8dad2f58bf408300"
             },
             "ctorMsg": {
                 "function": "spend",
@@ -134,7 +174,7 @@ function earn(sum,source) {
         "params": {
             "type": 1,
             "chaincodeID": {
-                "name": "170560c26bca721f163ea8eb86d8ee49d0927eabf7ec4d9f3779880817015662cf0841cd23b489b92c607162b42374cd511637a7797b3967b693c6ae78e22cb4"
+                "name": "aada36766f1d10343c86daac7af7fddc3c75f6710ac28c09584a53da4dd2a608d13ad07fb02aad514b891c920eb284bcc07d077b7d191aef8dad2f58bf408300"
             },
             "ctorMsg": {
                 "function": "earn",
@@ -158,6 +198,78 @@ function earn(sum,source) {
         success: function (result) {
             alert("Enjoy they Ride!");
             location.reload();
+        },
+        error: function (error) {
+            alert(error.statusText);
+        }
+
+    });
+}
+
+function acquire() {
+    var result_data = null;
+    var request = {
+        "jsonrpc": "2.0",
+        "method": "invoke",
+        "params": {
+            "type": 1,
+            "chaincodeID": {
+                "name": "aada36766f1d10343c86daac7af7fddc3c75f6710ac28c09584a53da4dd2a608d13ad07fb02aad514b891c920eb284bcc07d077b7d191aef8dad2f58bf408300"
+            },
+            "ctorMsg": {
+                "function": "acquire",
+                "args": []
+            },
+            "secureContext": "admin"
+        },
+        "id": 2
+    };
+    var json_request = JSON.stringify(request);
+
+    $.ajax({
+        url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
+        async: false,
+        type: 'post',
+        dataType: 'json',
+        data: json_request,
+        success: function (result) {
+            // DO STUFF
+        },
+        error: function (error) {
+            alert(error.statusText);
+        }
+
+    });
+}
+
+function release() {
+    var result_data = null;
+    var request = {
+        "jsonrpc": "2.0",
+        "method": "invoke",
+        "params": {
+            "type": 1,
+            "chaincodeID": {
+                "name": "aada36766f1d10343c86daac7af7fddc3c75f6710ac28c09584a53da4dd2a608d13ad07fb02aad514b891c920eb284bcc07d077b7d191aef8dad2f58bf408300"
+            },
+            "ctorMsg": {
+                "function": "release",
+                "args": []
+            },
+            "secureContext": "admin"
+        },
+        "id": 2
+    };
+    var json_request = JSON.stringify(request);
+
+    $.ajax({
+        url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
+        async: false,
+        type: 'post',
+        dataType: 'json',
+        data: json_request,
+        success: function (result) {
+            // DO STUFF
         },
         error: function (error) {
             alert(error.statusText);
@@ -327,12 +439,11 @@ function getCWBalance() {
     });
 }
 
-function wash_screen() {
-    var bal = $("#cwBal").html();
-    var price = $("#cwPrc").html();
+function display_data() {
+    var bal = $("#bal").html();
 
     $.ajax({
-        url: "http://10.223.90.227:5000/lcd?line1=Carwash+Price%3A" + price +"&line2=Balance%3A" + bal,
+        url: "http://10.223.116.21:5000/lcd?line1=Car+balance%3A " + bal +"&line2=Available%3A ",
         type: 'get',
         success: function (result) {
             console.log("Hardware notified");
@@ -348,7 +459,7 @@ function pull_rfid(repeat) {
     console.log("Pulling rfid");
 
     $.ajax({
-        url: "http://10.223.90.227:5000/rfid/",
+        url: "http://10.223.116.21:5000/rfid/",
         type: 'get',
         success: function (result) {
             process_rfid(result);
@@ -373,6 +484,12 @@ function process_rfid(result) {
             console.log(record.cardUID);
             if (record.cardUID === rfid_codes.carwash) {
                 car_wash();
+            } else if (record.cardUID === rfid_codes.parking) {
+                car_parking();
+            } else if (record.cardUID === rfid_codes.toll) {
+                toll_collect();
+            } else if (record.cardUID === rfid_codes.uber) {
+                car_uber();
             }
             if (timestamp > maxTimeStamp) {
                 maxTimeStamp = timestamp;
