@@ -123,7 +123,7 @@ var getHtmlString =  function (block, num) {
 		var tx = block.transactions[i];
 		var id = tx.txid; // Transaction ID
 		var txTime = (new Date(1000 * tx.timestamp.seconds)+"").split(" (")[0]; // Transaction time, get rid of unnecessary string
-		var payload = atob(tx.payload).substring(143).replace(/[\x00-\x1F\x7F-\x9F]/g, " ").replace(/  /g, " "); // Transaction data like "carwash pay 50"
+		var payload = "Car " + atob(tx.payload).substring(143).replace(/[\x00-\x1F\x7F-\x9F]/g, " ").replace(/  /g, " "); // Transaction data like "carwash pay 50"
 		html = html+"<tr>";
 		html = html+"<th class='col-md-1' scope='row'>"+(i+1)+"</th>";
 		html = html+"<td class='col-md-5' style='word-break:break-all;'>"+id+"</td>";
