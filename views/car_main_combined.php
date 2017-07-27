@@ -49,7 +49,7 @@
                     </div>
                     <span class="input-group-addon"><strong>$</strong></span>
                 </div>
-                <div style="display: table; margin: 0 auto; padding-top:10px;">
+                <!--<div style="display: table; margin: 0 auto; padding-top:10px;">
                     <button type="button" class="btn btn-success pull-right" id="btn_start" onclick="startDriving()">
                       <span class="glyphicon glyphicon-road"></span> Start Driving
                     </button>
@@ -60,22 +60,28 @@
                         var startDriving = function(){
                           $('#btn_stop').show();
                           $('#btn_start').hide();
-                          $('#mainContainer').show();
+
+                            $('#btnCarPark').prop('disabled',false);
+                            $('#btnCarWash').prop('disabled',false);
+                        //  $('#mainContainer').show();
                           callMainData();
                         };
                         var stopDriving = function(){
                           $('#btn_stop').hide();
                           $('#btn_start').show();
-                          $('#mainContainer').hide();
+                            $('#btnCarPark').prop('disabled',true);
+                            $('#btnCarWash').prop('disabled',true);
+                            location.reload();
+                         // $('#mainContainer').hide();
                         };
                     </script>
-                </div>
+                </div>-->
             </div>
             <div class="col-sm-4"></div>
         </div>
     </div>
     <!-- Main start-->
-    <div class="container-fluid" id="mainContainer" style="display: none;">
+    <div class="container-fluid" id="mainContainer" style="display: true;">
       <div class="col-md-12"><div class="row">
         <div class="col-md-10">
           <div class="row">
@@ -108,7 +114,7 @@
                                                          data-on="Free" data-off="Full" data-onstyle="success" data-offstyle="danger">
                                                   <script>
                                                     $(function(){
-                                                      $('#btnCarWash').prop('disabled', true);
+                                                     // $('#btnCarWash').prop('disabled', true);
                                                     });
                                                   </script>
                                               </td>
@@ -168,8 +174,9 @@
                                                     data-on="Free" data-off="Full" data-onstyle="success" data-offstyle="danger">
                                                 <script>
                                                   $(function(){
-                                                    $('#btnCarPark').prop('disabled', true);
-                                                    $('#hrs').prop('disabled', true);
+                                                      //getParkingAvailability();
+                                                  //  $('#btnCarPark').prop('disabled', true);
+                                                   // $('#hrs').prop('disabled', true);*/
                                                   });
                                                 </script>
                                             </td>
@@ -337,7 +344,7 @@
                 </li>
               </ul>
             </div>
-            <ul class="timeline">
+            <ul class="">
                 <!-- Items will be here
                 <li id="1">
                   <div class="direction-l">

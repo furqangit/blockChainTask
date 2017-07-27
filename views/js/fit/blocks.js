@@ -6,8 +6,8 @@ var curr_blk_hash;
 var prev_blk_hash;
 var blk_num = 0;
 $(document).ready(function() {
-    getBlocks();
-    callBlocks();
+    //getBlocks();
+   // callBlocks();
 });
 function callBlocks(){
     window.setInterval(function(){

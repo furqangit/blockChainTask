@@ -1,6 +1,7 @@
 function alertFunc() {
 		alert("no available function !");
 }
+var err = "";
  var height = 0;
  var last_timestamp = 0;
  var rfid_codes = {
@@ -8,7 +9,8 @@ function alertFunc() {
  }
 
 $(document).ready(function() {
-	getBalance();
+	//getBalance();
+    callMainData();//toggleParking();
 });
 
 function callMainData() {
@@ -27,7 +29,6 @@ function callMainData() {
 		success: function (result) {
 			getBalance();
 			getTollPrice();
-			getTollBalance();
 			getTollBalance();
 			getCWBalance();
 			getCWPrice();
@@ -110,13 +111,14 @@ function spend(sum,purpose) {
 
     $.ajax({
         url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
-        async: false,
+        async: true,
         cache: false,
         type: 'post',
         dataType: 'json',
         data: json_request,
         success: function (result) {
-                location.reload();
+            location.reload();
+            //callMainData();
         },
         error: function (error) {
             alert(error.statusText);
@@ -449,32 +451,39 @@ function getCWAvailability() {
             //$("#avl").html((result.result.message == "true")?"Yes":"No");
 			// TODO: change availability status
 			if(result.result.message == "true") {
+			    err_ = "";
 				$('#wash_toggle-trigger').bootstrapToggle('on');
 				console.log("wash status: free");
 				$('#wash_warningMsg_toggleOn').show();
 				$('#wash_warningMsg_toggleOff').hide();
 			}
 			else {
+			    err_ = "Car is under washing station";
 				$('#wash_toggle-trigger').bootstrapToggle('off');
 				console.log("wash status: full");
 				$('#wash_warningMsg_toggleOn').hide();
 				$('#wash_warningMsg_toggleOff').show();
+               // $('#btnCarWash').prop('disabled', true);
 				// Switching the toggle enable is only possible with scanning RFID
-				$('#wash_toggle-trigger').bootstrapToggle('disable');
+				//$('#wash_toggle-trigger').bootstrapToggle('disable');
 			}
 			// Toggle settings for availability status of washing
 			$('#wash_toggle-trigger').change(function() {
 				var toggle_value = $($('#wash_toggle-trigger')).prop('checked');
 				var button = $('#btnCarWash');
 				if (!toggle_value) {
-					$(button).prop('disabled', false);
+                    err_ = "Car is under washing station";
+					//$(button).prop('disabled', true);
 					$('#wash_warningMsg_toggleOn').hide();
 					//TODO: ajax request for parking here
-					alert("call changeWashingAvailability() function here!");
+					//alert("call changeWashingAvailability() function here!");
 				} else {
-					$(button).prop('disabled', true);
+                    err_ = "";
+					//$(button).prop('disabled', false);
 					$('#wash_warningMsg_toggleOn').show();
 				}
+				console.log("calling toggle wash..");
+				toggleWashing();
 			});
         },
         error: function (error) {
@@ -484,8 +493,8 @@ function getCWAvailability() {
 }
 
 function car_wash() {
-    var price = getCWPrice();
-    if($("#avl").html() == "Yes") {
+    if(err_ == "" && err == "") {
+        var price = getCWPrice();
         var result_data = null;
         var request = {
             "jsonrpc": "2.0",
@@ -515,7 +524,7 @@ function car_wash() {
             dataType: 'json',
             data: json_request,
             success: function (result) {
-                acquire();
+                toggleWashing();
                 spend(price, "carwash");
             },
             error: function (error) {
@@ -527,11 +536,12 @@ function car_wash() {
     }
     else
     {
-        alert("Not Available this time, come back later!");
+        alert(err_+err);
     }
 }
 
-function acquire(){
+function toggleWashing(){
+    console.log("Toggling Wash..");
     var result_data = null;
     var request = {
         "jsonrpc": "2.0",
@@ -679,14 +689,18 @@ function getParkingAvailability() {
 				console.log("park status: free");
 				$('#park_warningMsg_toggleOn').show();
 				$('#park_warningMsg_toggleOff').hide();
+				err = "";
 			}
 			else {
 				$('#park_toggle-trigger').bootstrapToggle('off');
 				console.log("park status: full");
+				err = "car is parked";
 				$('#park_warningMsg_toggleOn').hide();
 				$('#park_warningMsg_toggleOff').show();
+                //$('#btnCarPark').prop('disabled', true);
+               // $('#hrs').prop('disabled', true);
 				// Switching the toggle enable is only possible with scanning RFID
-				$('#park_toggle-trigger').bootstrapToggle('disable');
+				//$('#park_toggle-trigger').bootstrapToggle('disable');
 			}
 			// Toggle settings for availability status of parking
 			$('#park_toggle-trigger').change(function() {
@@ -694,16 +708,19 @@ function getParkingAvailability() {
 				var button = $('#btnCarPark');
 				var input = $('#hrs');
 				if (!toggle_value) {
-					$(button).prop('disabled', false);
-					$(input).prop('disabled', false);
+                    err = "car is parked";
+					//$(button).prop('disabled', true);
+					//$(input).prop('disabled', true);
 					$('#park_warningMsg_toggleOn').hide();
 					//TODO: ajax request for parking here
-					alert("call changeParkingAvailability() function here!");
 				} else {
-					$(button).prop('disabled', true);
-					$(input).prop('disabled', true);
+                    err = "";
+					//$(button).prop('disabled', false);
+					//$(input).prop('disabled', false);
 					$('#park_warningMsg_toggleOn').show();
 				}
+                console.log("calling toggle parking..");
+                toggleParking();
 			});
         },
         error: function (error) {
@@ -713,9 +730,61 @@ function getParkingAvailability() {
 }
 
 function car_parking() {
-    var price = getParkingPrice();
-    var hours = $("#hrs").val();
-    var amount = price * hours;
+    if(err == "" && err_=="") {
+        var price = getParkingPrice();
+        var hours = $("#hrs").val();
+        var amount = price * hours;
+        var result_data = null;
+        var request = {
+            "jsonrpc": "2.0",
+            "method": "invoke",
+            "params": {
+                "type": 1,
+                "chaincodeID": {
+                    "name": "8a273890a316cb8d0e42d60e05b1cd4c6d267d5b415c0adf9d031815596e3b48cf7c5efab1ea7c8662dfa03badca2881762a71ddddd94447b3e3e632c512cd77"
+                },
+                "ctorMsg": {
+                    "function": "pay",
+                    "args": [
+                        "" + amount + ""
+                    ]
+                },
+                "secureContext": "admin"
+            },
+            "id": 2
+        };
+        var json_request = JSON.stringify(request);
+        if ($.isNumeric($("#hrs").val())) {
+            $.ajax({
+                url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
+                async: false,
+                type: 'post',
+                dataType: 'json',
+                data: json_request,
+                success: function (result) {
+                    toggleParking();
+                    spend(amount, "parking");
+                },
+                error: function (error) {
+                    alert(error.statusText);
+                    console.log(error);
+                }
+
+            });
+        }
+        else {
+            alert('Enter valid hours!');
+            return;
+        }
+    }
+    else
+    {
+     alert(err+err_);
+    }
+}
+
+function toggleParking(){
+    console.log("Toggling Parking..");
     var result_data = null;
     var request = {
         "jsonrpc": "2.0",
@@ -726,9 +795,9 @@ function car_parking() {
                 "name": "8a273890a316cb8d0e42d60e05b1cd4c6d267d5b415c0adf9d031815596e3b48cf7c5efab1ea7c8662dfa03badca2881762a71ddddd94447b3e3e632c512cd77"
             },
             "ctorMsg": {
-                "function": "pay",
+                "function": "toggle",
                 "args": [
-                    ""+amount+""
+
                 ]
             },
             "secureContext": "admin"
@@ -744,8 +813,7 @@ function car_parking() {
         dataType: 'json',
         data: json_request,
         success: function (result) {
-            console.log(result);
-            spend(amount,"parking");
+
         },
         error: function (error) {
             alert(error.statusText);
@@ -754,7 +822,6 @@ function car_parking() {
 
     });
 }
-
 //------------------ U B E R --------------------------------------
 function getUberBalance() {
     var result_data = null;
