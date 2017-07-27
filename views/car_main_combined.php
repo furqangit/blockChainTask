@@ -111,7 +111,7 @@
                                               <td>Bonn Car Wash</td>
                                               <td id="avl">
                                                   <input type="checkbox" id="wash_toggle-trigger" checked data-toggle="toggle"
-                                                         data-on="Free" data-off="Full" data-onstyle="success" data-offstyle="danger">
+                                                         data-on="Free" data-off="Leave Station" data-onstyle="success" data-offstyle="danger">
                                                   <script>
                                                     $(function(){
                                                      // $('#btnCarWash').prop('disabled', true);
@@ -171,7 +171,7 @@
                                             <td id="prkPrc"></td>
                                             <td id="prkAvl">
                                                 <input type="checkbox" id="park_toggle-trigger" checked data-toggle="toggle"
-                                                    data-on="Free" data-off="Full" data-onstyle="success" data-offstyle="danger">
+                                                    data-on="Free" data-off="Leave Parking" data-onstyle="success" data-offstyle="danger">
                                                 <script>
                                                   $(function(){
                                                       //getParkingAvailability();
@@ -344,8 +344,8 @@
                 </li>
               </ul>
             </div>
-            <ul class="">
-                <!-- Items will be here
+            <ul class="timeline">
+               <!--  Items will be here
                 <li id="1">
                   <div class="direction-l">
                     <div class="flag-wrapper">
@@ -363,8 +363,8 @@
                     </div>
                     <img class="chain_img" tabindex="50" data-placement="left" onclick="updateBlockInfo($(this),2)" style="cursor: pointer;" src="images/chain.png">
                   </div>
-                </li>
-                -->
+                </li>-->
+
             </ul>
         </div><!-- End of col-md-2 for blocks timeline -->
       </div></div><!-- End of col-md-12 -->

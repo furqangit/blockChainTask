@@ -2,6 +2,7 @@ function alertFunc() {
 		alert("no available function !");
 }
 var err = "";
+var err_
  var height = 0;
  var last_timestamp = 0;
  var rfid_codes = {
@@ -392,16 +393,21 @@ function payToll(amount) {
 }
 
 function toll_collect(){
-    var km = $("#itm").val();
-    var price = getTollPrice();
+    if(err_ == "" && err == "") {
+        var km = $("#itm").val();
+        var price = getTollPrice();
 
-    if(km > 0) {
-        var amount = price * km;
-        payToll(amount);
+        if (km > 0) {
+            var amount = price * km;
+            payToll(amount);
+        }
+        else {
+            alert("Invalid Input");
+        }
     }
     else
     {
-        alert("Invalid Input");
+        alert(err+err_);
     }
 }
 
@@ -573,6 +579,7 @@ function getCWAvailability() {
 				console.log("wash status: free");
 				$('#wash_warningMsg_toggleOn').show();
 				$('#wash_warningMsg_toggleOff').hide();
+                $('#wash_toggle-trigger').bootstrapToggle('disable');
 			}
 			else {
 			    err_ = "Car is under washing station";
@@ -598,6 +605,7 @@ function getCWAvailability() {
                     err_ = "";
 					//$(button).prop('disabled', false);
 					$('#wash_warningMsg_toggleOn').show();
+                    $('#wash_toggle-trigger').bootstrapToggle('disable');
 				}
 				console.log("calling toggle wash..");
 				toggleWashing();
@@ -806,6 +814,7 @@ function getParkingAvailability() {
 				console.log("park status: free");
 				$('#park_warningMsg_toggleOn').show();
 				$('#park_warningMsg_toggleOff').hide();
+                $('#park_toggle-trigger').bootstrapToggle('disable');
 				err = "";
 			}
 			else {
@@ -835,6 +844,7 @@ function getParkingAvailability() {
 					//$(button).prop('disabled', false);
 					//$(input).prop('disabled', false);
 					$('#park_warningMsg_toggleOn').show();
+                    $('#park_toggle-trigger').bootstrapToggle('disable');
 				}
                 console.log("calling toggle parking..");
                 toggleParking();
@@ -1015,47 +1025,58 @@ function getUberPrice(){
 }
 
 function car_uber() {
-    var kms = $("#km").val();
-    var ppk = getUberPrice();
-    var amount = kms * ppk;
+    if(err_ == "" && err == "") {
+        var kms = $("#km").val();
+        var ppk = getUberPrice();
+        var amount = kms * ppk;
 
-    var result_data = null;
-    var request = {
-        "jsonrpc": "2.0",
-        "method": "invoke",
-        "params": {
-            "type": 1,
-            "chaincodeID": {
-                "name": "28ce4c27f62002f5432c1b4888d6d3948e136167b4f40404e8bff24af63b766af3186d6dd7cd12f74cfa7d1d80b36bb785c7499bacf6b416348b48f40ffead81"
+        var result_data = null;
+        var request = {
+            "jsonrpc": "2.0",
+            "method": "invoke",
+            "params": {
+                "type": 1,
+                "chaincodeID": {
+                    "name": "28ce4c27f62002f5432c1b4888d6d3948e136167b4f40404e8bff24af63b766af3186d6dd7cd12f74cfa7d1d80b36bb785c7499bacf6b416348b48f40ffead81"
+                },
+                "ctorMsg": {
+                    "function": "drive",
+                    "args": [
+                        "" + amount + ""
+                    ]
+                },
+                "secureContext": "admin"
             },
-            "ctorMsg": {
-                "function": "drive",
-                "args": [
-                    ""+amount+""
-                ]
-            },
-            "secureContext": "admin"
-        },
-        "id": 2
-    };
-    var json_request = JSON.stringify(request);
+            "id": 2
+        };
+        var json_request = JSON.stringify(request);
+        if(kms > 0) {
+            $.ajax({
+                url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
+                async: false,
+                type: 'post',
+                dataType: 'json',
+                data: json_request,
+                success: function (result) {
+                    console.log(result);
+                    earn(amount, "uber");
+                },
+                error: function (error) {
+                    alert(error.statusText);
+                    console.log(error);
+                }
 
-    $.ajax({
-        url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
-        async: false,
-        type: 'post',
-        dataType: 'json',
-        data: json_request,
-        success: function (result) {
-            console.log(result);
-            earn(amount,"uber");
-        },
-        error: function (error) {
-            alert(error.statusText);
-            console.log(error);
+            });
         }
-
-    });
+        else
+        {
+            alert("Invalid Kilometres");
+        }
+    }
+    else
+    {
+        alert(err+err_)
+    }
 }
 
 //_________________________________________________________________________________________________

@@ -48,7 +48,7 @@
 		    var gen_data = {
 		        Hash: block.stateHash.substr(0,8)+'..',
                 ChainCodes: block.transactions.length,
-            }
+            };
 			$("#blockContainer")
 				.append($('<div class="col-sm-3">')
 					.append($('<div class="jumbotron text-left">')

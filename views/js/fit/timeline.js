@@ -1,5 +1,6 @@
 var arrBlocks = new Array();
 var addNewBlock = function (block, num) {
+  //  alert("anils funciton")
 	arrBlocks.push(block);
 	var currentTime = new Date().getTime();
 	$(".timeline")

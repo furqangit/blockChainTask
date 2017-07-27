@@ -6,13 +6,14 @@ var curr_blk_hash;
 var prev_blk_hash;
 var blk_num = 0;
 $(document).ready(function() {
-    //getBlocks();
-   // callBlocks();
+    getBlocks();
+    callBlocks();
 });
 function callBlocks(){
     window.setInterval(function(){
         console.log("calling for new block....");
         getNewBlock();
+
     }, 5000);
 }
 function getBlocks(){
@@ -38,6 +39,7 @@ function getBlocks(){
     });
 
 }
+
 function getNewBlock(){
     $.ajax({
         url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chain",
@@ -63,13 +65,14 @@ function getNewBlock(){
     });
 
 }
+
 function getBlocksInfo(num,isNewBlock) {
     var x;
     if(isNewBlock)    {
         x = num;
     }
     else {
-        x = num - 9;
+        x = num - 1;
     }
     for (var i = x; i <= num; i++) {
         $.ajax({

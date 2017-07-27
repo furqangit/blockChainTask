@@ -12,58 +12,14 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="car_main_combined.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="car_main_combined.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/car_main_combined.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="55" column="50" lean-forward="false" selection-start-line="55" selection-start-column="50" selection-end-line="55" selection-end-column="50" />
+            <state relative-caret-position="124">
+              <caret line="113" column="95" lean-forward="false" selection-start-line="113" selection-start-column="95" selection-end-line="113" selection-end-column="95" />
               <folding>
-                <marker date="1501113244861" expanded="false" signature="2694:2708" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="blocks.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/js/fit/blocks.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="9" column="5" lean-forward="false" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-              <folding>
-                <element signature="e#0#50#0" expanded="false" />
-                <element signature="n#!!block;n#getNewBlock#0" expanded="false" />
-                <element signature="n#!!block;n#getBlocksInfo#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fit.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/js/fit/fit.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="860" column="24" lean-forward="false" selection-start-line="860" selection-start-column="24" selection-end-line="860" selection-end-column="24" />
-              <folding>
-                <element signature="n#!!block;n#alertFunc#0" expanded="false" />
-                <element signature="n#!!block;n#callMainData#0" expanded="false" />
-                <element signature="n#!!block;n#getBalance#0" expanded="false" />
-                <element signature="n#!!block;n#spend#0" expanded="false" />
-                <element signature="n#!!block;n#earn#0" expanded="false" />
-                <element signature="n#!!block;n#getTollPrice#0" expanded="false" />
-                <element signature="n#!!block;n#getTollBalance#0" expanded="false" />
-                <element signature="n#!!block;n#payToll#0" expanded="false" />
-                <element signature="n#!!block;n#toll_collect#0" expanded="false" />
-                <element signature="n#!!block;n#getCWBalance#0" expanded="false" />
-                <element signature="n#!!block;n#wash_screen#0" expanded="false" />
-                <element signature="n#!!block;n#pull_rfid#0" expanded="false" />
-                <element signature="n#!!block;n#getCWPrice#0" expanded="false" />
-                <element signature="n#!!block;n#getParkingBalance#0" expanded="false" />
-                <element signature="n#!!block;n#getParkingPrice#0" expanded="false" />
-                <element signature="e#20682#21273#0" expanded="false" />
-                <element signature="n#!!block;n#toggleParking#0" expanded="false" />
-                <element signature="n#!!block;n#getUberBalance#0" expanded="false" />
-                <element signature="n#!!block;n#car_uber#0" expanded="false" />
-                <element signature="e#26482#26912#0" expanded="false" />
+                <element signature="e#2273#3766#0#HTML" expanded="false" />
+                <marker date="1501187868022" expanded="false" signature="2694:2708" ph="..." />
               </folding>
             </state>
           </provider>
@@ -79,33 +35,88 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="timeline.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/js/fit/timeline.js">
+      <file leaf-file-name="visualization.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/visualization.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2125">
-              <caret line="125" column="141" lean-forward="false" selection-start-line="125" selection-start-column="141" selection-end-line="125" selection-end-column="141" />
+            <state relative-caret-position="17">
+              <caret line="46" column="48" lean-forward="false" selection-start-line="46" selection-start-column="48" selection-end-line="46" selection-end-column="48" />
               <folding>
-                <marker date="1501096225700" expanded="true" signature="551:567" ph="..." />
-                <marker date="1501096225700" expanded="true" signature="2587:2624" ph="..." />
-                <marker date="1501096225700" expanded="true" signature="4823:4844" ph="..." />
-                <marker date="1501096225700" expanded="true" signature="4903:4925" ph="..." />
-                <marker date="1501096225700" expanded="true" signature="4988:5010" ph="..." />
+                <marker date="1501186184929" expanded="true" signature="2100:2121" ph="..." />
+                <marker date="1501186184929" expanded="true" signature="3125:3146" ph="..." />
+                <marker date="1501186184929" expanded="true" signature="3207:3229" ph="..." />
+                <marker date="1501186184929" expanded="true" signature="3294:3316" ph="..." />
+                <marker date="1501186184929" expanded="true" signature="4644:4914" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="visualization.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/visualization.php">
+      <file leaf-file-name="timeline.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/js/fit/timeline.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1224">
-              <caret line="77" column="81" lean-forward="false" selection-start-line="77" selection-start-column="81" selection-end-line="77" selection-end-column="81" />
+            <state relative-caret-position="34">
+              <caret line="2" column="4" lean-forward="false" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
               <folding>
-                <marker date="1501096225810" expanded="true" signature="2099:2120" ph="..." />
-                <marker date="1501096225810" expanded="true" signature="3124:3145" ph="..." />
-                <marker date="1501096225810" expanded="true" signature="3206:3228" ph="..." />
-                <marker date="1501096225810" expanded="true" signature="3293:3315" ph="..." />
-                <marker date="1501096225810" expanded="true" signature="4643:4913" ph="..." />
+                <element signature="e#686#4158#0" expanded="false" />
+                <element signature="e#4204#5135#0" expanded="false" />
+                <marker date="1501186109441" expanded="true" signature="581:597" ph="..." />
+                <marker date="1501186109441" expanded="true" signature="2617:2654" ph="..." />
+                <marker date="1501186109441" expanded="true" signature="4862:4883" ph="..." />
+                <marker date="1501186109441" expanded="true" signature="4942:4964" ph="..." />
+                <marker date="1501186109441" expanded="true" signature="5027:5049" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="blocks.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/js/fit/blocks.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#50#0" expanded="false" />
+                <element signature="n#!!block;n#getBlocks#0" expanded="false" />
+                <element signature="n#!!block;n#getNewBlock#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fit.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/js/fit/fit.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="369">
+              <caret line="606" column="58" lean-forward="false" selection-start-line="606" selection-start-column="58" selection-end-line="606" selection-end-column="58" />
+              <folding>
+                <element signature="n#!!block;n#alertFunc#0" expanded="false" />
+                <element signature="e#292#350#0" expanded="false" />
+                <element signature="n#!!block;n#getBalance#0" expanded="false" />
+                <element signature="n#!!block;n#checkCarAvail#0" expanded="false" />
+                <element signature="n#!!block;n#spend#0" expanded="false" />
+                <element signature="n#!!block;n#earn#0" expanded="false" />
+                <element signature="n#!!block;n#acquire#0" expanded="false" />
+                <element signature="n#!!block;n#release#0" expanded="false" />
+                <element signature="n#!!block;n#getTollPrice#0" expanded="false" />
+                <element signature="n#!!block;n#getTollBalance#0" expanded="false" />
+                <element signature="n#!!block;n#getCWBalance#0" expanded="false" />
+                <element signature="n#!!block;n#display_data#0" expanded="false" />
+                <element signature="n#!!block;n#pull_rfid#0" expanded="false" />
+                <element signature="n#!!block;n#process_rfid#0" expanded="false" />
+                <element signature="n#!!block;n#getCWPrice#0" expanded="false" />
+                <element signature="n#!!block;n#car_wash#0" expanded="false" />
+                <element signature="n#!!block;n#toggleWashing#0" expanded="false" />
+                <element signature="n#!!block;n#getParkingBalance#0" expanded="false" />
+                <element signature="n#!!block;n#getParkingPrice#0" expanded="false" />
+                <element signature="n#!!block;n#car_parking#0" expanded="false" />
+                <element signature="e#24250#24841#0" expanded="false" />
+                <element signature="n#!!block;n#toggleParking#0" expanded="false" />
+                <element signature="n#!!block;n#getUberBalance#0" expanded="false" />
+                <element signature="n#!!block;n#getUberPrice#0" expanded="false" />
+                <element signature="n#!!block;n#car_uber#0" expanded="false" />
+                <element signature="e#28984#29577#0" expanded="false" />
+                <element signature="e#29672#30216#0" expanded="false" />
+                <element signature="e#30457#30887#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -122,12 +133,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>uber</find>
-      <find>empty</find>
-      <find>readhhy</find>
-      <find>avail</find>
       <find>car_parking</find>
-      <find>addNewBlock</find>
       <find>table</find>
       <find>carwash</find>
       <find>acquire</find>
@@ -151,7 +157,12 @@
       <find>callMainData</find>
       <find>reload</find>
       <find>btnCarPark</find>
+      <find>getBlocksInfo</find>
+      <find>addNewBlock</find>
+      <find>addnew</find>
       <find>spend</find>
+      <find>err_</find>
+      <find>err</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -176,10 +187,11 @@
         <option value="$PROJECT_DIR$/views/chainInfo.txt" />
         <option value="$PROJECT_DIR$/views/car_main.php" />
         <option value="$PROJECT_DIR$/views/timeline/timeline.php" />
-        <option value="$PROJECT_DIR$/views/visualization.php" />
         <option value="$PROJECT_DIR$/views/js/fit/blocks.js" />
-        <option value="$PROJECT_DIR$/views/car_main_combined.php" />
+        <option value="$PROJECT_DIR$/views/js/fit/timeline.js" />
+        <option value="$PROJECT_DIR$/views/visualization.php" />
         <option value="$PROJECT_DIR$/views/js/fit/fit.js" />
+        <option value="$PROJECT_DIR$/views/car_main_combined.php" />
       </list>
     </option>
   </component>
@@ -212,6 +224,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -290,7 +303,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -421,19 +433,22 @@
       <workItem from="1501109942328" duration="1352000" />
       <workItem from="1501111857135" duration="1804000" />
       <workItem from="1501113694307" duration="1675000" />
-      <workItem from="1501182884020" duration="560000" />
+      <workItem from="1501182884020" duration="1761000" />
+      <workItem from="1501184677795" duration="1784000" />
+      <workItem from="1501186594847" duration="1289000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83445000" />
+    <option name="totallyTimeSpent" value="87719000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21742313" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27401575" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.042519685" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.49707174" order="7" side_tool="false" content_ui="tabs" />
@@ -494,7 +509,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="12" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -519,6 +534,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
           <caret line="5910" column="4" lean-forward="false" selection-start-line="5910" selection-start-column="4" selection-end-line="5910" selection-end-column="4" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -556,25 +574,33 @@
           <caret line="8" column="35" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="8" selection-end-column="35" />
           <folding>
             <element signature="n#!!block;n#alertFunc#0" expanded="false" />
-            <element signature="n#!!block;n#callMainData#0" expanded="false" />
+            <element signature="e#292#350#0" expanded="false" />
             <element signature="n#!!block;n#getBalance#0" expanded="false" />
+            <element signature="n#!!block;n#checkCarAvail#0" expanded="false" />
             <element signature="n#!!block;n#spend#0" expanded="false" />
             <element signature="n#!!block;n#earn#0" expanded="false" />
+            <element signature="n#!!block;n#acquire#0" expanded="false" />
+            <element signature="n#!!block;n#release#0" expanded="false" />
             <element signature="n#!!block;n#getTollPrice#0" expanded="false" />
             <element signature="n#!!block;n#getTollBalance#0" expanded="false" />
-            <element signature="n#!!block;n#payToll#0" expanded="false" />
-            <element signature="n#!!block;n#toll_collect#0" expanded="false" />
             <element signature="n#!!block;n#getCWBalance#0" expanded="false" />
-            <element signature="n#!!block;n#wash_screen#0" expanded="false" />
+            <element signature="n#!!block;n#display_data#0" expanded="false" />
             <element signature="n#!!block;n#pull_rfid#0" expanded="false" />
+            <element signature="n#!!block;n#process_rfid#0" expanded="false" />
             <element signature="n#!!block;n#getCWPrice#0" expanded="false" />
+            <element signature="n#!!block;n#car_wash#0" expanded="false" />
+            <element signature="n#!!block;n#toggleWashing#0" expanded="false" />
             <element signature="n#!!block;n#getParkingBalance#0" expanded="false" />
             <element signature="n#!!block;n#getParkingPrice#0" expanded="false" />
-            <element signature="e#20682#21273#0" expanded="false" />
+            <element signature="n#!!block;n#car_parking#0" expanded="false" />
+            <element signature="e#24250#24841#0" expanded="false" />
             <element signature="n#!!block;n#toggleParking#0" expanded="false" />
             <element signature="n#!!block;n#getUberBalance#0" expanded="false" />
+            <element signature="n#!!block;n#getUberPrice#0" expanded="false" />
             <element signature="n#!!block;n#car_uber#0" expanded="false" />
-            <element signature="e#26482#26912#0" expanded="false" />
+            <element signature="e#28984#29577#0" expanded="false" />
+            <element signature="e#29672#30216#0" expanded="false" />
+            <element signature="e#30457#30887#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -587,25 +613,33 @@
           <caret line="8" column="35" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="8" selection-end-column="35" />
           <folding>
             <element signature="n#!!block;n#alertFunc#0" expanded="false" />
-            <element signature="n#!!block;n#callMainData#0" expanded="false" />
+            <element signature="e#292#350#0" expanded="false" />
             <element signature="n#!!block;n#getBalance#0" expanded="false" />
+            <element signature="n#!!block;n#checkCarAvail#0" expanded="false" />
             <element signature="n#!!block;n#spend#0" expanded="false" />
             <element signature="n#!!block;n#earn#0" expanded="false" />
+            <element signature="n#!!block;n#acquire#0" expanded="false" />
+            <element signature="n#!!block;n#release#0" expanded="false" />
             <element signature="n#!!block;n#getTollPrice#0" expanded="false" />
             <element signature="n#!!block;n#getTollBalance#0" expanded="false" />
-            <element signature="n#!!block;n#payToll#0" expanded="false" />
-            <element signature="n#!!block;n#toll_collect#0" expanded="false" />
             <element signature="n#!!block;n#getCWBalance#0" expanded="false" />
-            <element signature="n#!!block;n#wash_screen#0" expanded="false" />
+            <element signature="n#!!block;n#display_data#0" expanded="false" />
             <element signature="n#!!block;n#pull_rfid#0" expanded="false" />
+            <element signature="n#!!block;n#process_rfid#0" expanded="false" />
             <element signature="n#!!block;n#getCWPrice#0" expanded="false" />
+            <element signature="n#!!block;n#car_wash#0" expanded="false" />
+            <element signature="n#!!block;n#toggleWashing#0" expanded="false" />
             <element signature="n#!!block;n#getParkingBalance#0" expanded="false" />
             <element signature="n#!!block;n#getParkingPrice#0" expanded="false" />
-            <element signature="e#20682#21273#0" expanded="false" />
+            <element signature="n#!!block;n#car_parking#0" expanded="false" />
+            <element signature="e#24250#24841#0" expanded="false" />
             <element signature="n#!!block;n#toggleParking#0" expanded="false" />
             <element signature="n#!!block;n#getUberBalance#0" expanded="false" />
+            <element signature="n#!!block;n#getUberPrice#0" expanded="false" />
             <element signature="n#!!block;n#car_uber#0" expanded="false" />
-            <element signature="e#26482#26912#0" expanded="false" />
+            <element signature="e#28984#29577#0" expanded="false" />
+            <element signature="e#29672#30216#0" expanded="false" />
+            <element signature="e#30457#30887#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -617,25 +651,33 @@
           <caret line="20" column="43" lean-forward="false" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
           <folding>
             <element signature="n#!!block;n#alertFunc#0" expanded="false" />
-            <element signature="n#!!block;n#callMainData#0" expanded="false" />
+            <element signature="e#292#350#0" expanded="false" />
             <element signature="n#!!block;n#getBalance#0" expanded="false" />
+            <element signature="n#!!block;n#checkCarAvail#0" expanded="false" />
             <element signature="n#!!block;n#spend#0" expanded="false" />
             <element signature="n#!!block;n#earn#0" expanded="false" />
+            <element signature="n#!!block;n#acquire#0" expanded="false" />
+            <element signature="n#!!block;n#release#0" expanded="false" />
             <element signature="n#!!block;n#getTollPrice#0" expanded="false" />
             <element signature="n#!!block;n#getTollBalance#0" expanded="false" />
-            <element signature="n#!!block;n#payToll#0" expanded="false" />
-            <element signature="n#!!block;n#toll_collect#0" expanded="false" />
             <element signature="n#!!block;n#getCWBalance#0" expanded="false" />
-            <element signature="n#!!block;n#wash_screen#0" expanded="false" />
+            <element signature="n#!!block;n#display_data#0" expanded="false" />
             <element signature="n#!!block;n#pull_rfid#0" expanded="false" />
+            <element signature="n#!!block;n#process_rfid#0" expanded="false" />
             <element signature="n#!!block;n#getCWPrice#0" expanded="false" />
+            <element signature="n#!!block;n#car_wash#0" expanded="false" />
+            <element signature="n#!!block;n#toggleWashing#0" expanded="false" />
             <element signature="n#!!block;n#getParkingBalance#0" expanded="false" />
             <element signature="n#!!block;n#getParkingPrice#0" expanded="false" />
-            <element signature="e#20682#21273#0" expanded="false" />
+            <element signature="n#!!block;n#car_parking#0" expanded="false" />
+            <element signature="e#24250#24841#0" expanded="false" />
             <element signature="n#!!block;n#toggleParking#0" expanded="false" />
             <element signature="n#!!block;n#getUberBalance#0" expanded="false" />
+            <element signature="n#!!block;n#getUberPrice#0" expanded="false" />
             <element signature="n#!!block;n#car_uber#0" expanded="false" />
-            <element signature="e#26482#26912#0" expanded="false" />
+            <element signature="e#28984#29577#0" expanded="false" />
+            <element signature="e#29672#30216#0" expanded="false" />
+            <element signature="e#30457#30887#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -732,6 +774,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
           <caret line="5910" column="4" lean-forward="false" selection-start-line="5910" selection-start-column="4" selection-end-line="5910" selection-end-column="4" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -786,13 +831,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/timeline/timeline.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="34" column="25" lean-forward="false" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/carWash/car_wash.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1870">
@@ -818,21 +856,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="84" column="55" lean-forward="false" selection-start-line="84" selection-start-column="55" selection-end-line="84" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/js/fit/timeline.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2125">
-          <caret line="125" column="141" lean-forward="false" selection-start-line="125" selection-start-column="141" selection-end-line="125" selection-end-column="141" />
-          <folding>
-            <marker date="1501096225700" expanded="true" signature="551:567" ph="..." />
-            <marker date="1501096225700" expanded="true" signature="2587:2624" ph="..." />
-            <marker date="1501096225700" expanded="true" signature="4823:4844" ph="..." />
-            <marker date="1501096225700" expanded="true" signature="4903:4925" ph="..." />
-            <marker date="1501096225700" expanded="true" signature="4988:5010" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -844,67 +867,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/visualization.php">
+    <entry file="file://$PROJECT_DIR$/views/timeline/timeline.php" />
+    <entry file="file://$PROJECT_DIR$/views/js/fit/timeline.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="77" column="81" lean-forward="false" selection-start-line="77" selection-start-column="81" selection-end-line="77" selection-end-column="81" />
+        <state relative-caret-position="34">
+          <caret line="2" column="4" lean-forward="false" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
           <folding>
-            <marker date="1501096225810" expanded="true" signature="2099:2120" ph="..." />
-            <marker date="1501096225810" expanded="true" signature="3124:3145" ph="..." />
-            <marker date="1501096225810" expanded="true" signature="3206:3228" ph="..." />
-            <marker date="1501096225810" expanded="true" signature="3293:3315" ph="..." />
-            <marker date="1501096225810" expanded="true" signature="4643:4913" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/car_main_combined.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="55" column="50" lean-forward="false" selection-start-line="55" selection-start-column="50" selection-end-line="55" selection-end-column="50" />
-          <folding>
-            <marker date="1501113244861" expanded="false" signature="2694:2708" ph="..." />
+            <element signature="e#686#4158#0" expanded="false" />
+            <element signature="e#4204#5135#0" expanded="false" />
+            <marker date="1501186109441" expanded="true" signature="581:597" ph="..." />
+            <marker date="1501186109441" expanded="true" signature="2617:2654" ph="..." />
+            <marker date="1501186109441" expanded="true" signature="4862:4883" ph="..." />
+            <marker date="1501186109441" expanded="true" signature="4942:4964" ph="..." />
+            <marker date="1501186109441" expanded="true" signature="5027:5049" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/js/fit/blocks.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="5" lean-forward="false" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+        <state relative-caret-position="17">
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding>
             <element signature="e#0#50#0" expanded="false" />
+            <element signature="n#!!block;n#getBlocks#0" expanded="false" />
             <element signature="n#!!block;n#getNewBlock#0" expanded="false" />
-            <element signature="n#!!block;n#getBlocksInfo#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/visualization.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="46" column="48" lean-forward="false" selection-start-line="46" selection-start-column="48" selection-end-line="46" selection-end-column="48" />
+          <folding>
+            <marker date="1501186184929" expanded="true" signature="2100:2121" ph="..." />
+            <marker date="1501186184929" expanded="true" signature="3125:3146" ph="..." />
+            <marker date="1501186184929" expanded="true" signature="3207:3229" ph="..." />
+            <marker date="1501186184929" expanded="true" signature="3294:3316" ph="..." />
+            <marker date="1501186184929" expanded="true" signature="4644:4914" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/js/fit/fit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="860" column="24" lean-forward="false" selection-start-line="860" selection-start-column="24" selection-end-line="860" selection-end-column="24" />
+        <state relative-caret-position="369">
+          <caret line="606" column="58" lean-forward="false" selection-start-line="606" selection-start-column="58" selection-end-line="606" selection-end-column="58" />
           <folding>
             <element signature="n#!!block;n#alertFunc#0" expanded="false" />
-            <element signature="n#!!block;n#callMainData#0" expanded="false" />
+            <element signature="e#292#350#0" expanded="false" />
             <element signature="n#!!block;n#getBalance#0" expanded="false" />
+            <element signature="n#!!block;n#checkCarAvail#0" expanded="false" />
             <element signature="n#!!block;n#spend#0" expanded="false" />
             <element signature="n#!!block;n#earn#0" expanded="false" />
+            <element signature="n#!!block;n#acquire#0" expanded="false" />
+            <element signature="n#!!block;n#release#0" expanded="false" />
             <element signature="n#!!block;n#getTollPrice#0" expanded="false" />
             <element signature="n#!!block;n#getTollBalance#0" expanded="false" />
-            <element signature="n#!!block;n#payToll#0" expanded="false" />
-            <element signature="n#!!block;n#toll_collect#0" expanded="false" />
             <element signature="n#!!block;n#getCWBalance#0" expanded="false" />
-            <element signature="n#!!block;n#wash_screen#0" expanded="false" />
+            <element signature="n#!!block;n#display_data#0" expanded="false" />
             <element signature="n#!!block;n#pull_rfid#0" expanded="false" />
+            <element signature="n#!!block;n#process_rfid#0" expanded="false" />
             <element signature="n#!!block;n#getCWPrice#0" expanded="false" />
+            <element signature="n#!!block;n#car_wash#0" expanded="false" />
+            <element signature="n#!!block;n#toggleWashing#0" expanded="false" />
             <element signature="n#!!block;n#getParkingBalance#0" expanded="false" />
             <element signature="n#!!block;n#getParkingPrice#0" expanded="false" />
-            <element signature="e#20682#21273#0" expanded="false" />
+            <element signature="n#!!block;n#car_parking#0" expanded="false" />
+            <element signature="e#24250#24841#0" expanded="false" />
             <element signature="n#!!block;n#toggleParking#0" expanded="false" />
             <element signature="n#!!block;n#getUberBalance#0" expanded="false" />
+            <element signature="n#!!block;n#getUberPrice#0" expanded="false" />
             <element signature="n#!!block;n#car_uber#0" expanded="false" />
-            <element signature="e#26482#26912#0" expanded="false" />
+            <element signature="e#28984#29577#0" expanded="false" />
+            <element signature="e#29672#30216#0" expanded="false" />
+            <element signature="e#30457#30887#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/car_main_combined.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="113" column="95" lean-forward="false" selection-start-line="113" selection-start-column="95" selection-end-line="113" selection-end-column="95" />
+          <folding>
+            <element signature="e#2273#3766#0#HTML" expanded="false" />
+            <marker date="1501187868022" expanded="false" signature="2694:2708" ph="..." />
           </folding>
         </state>
       </provider>
