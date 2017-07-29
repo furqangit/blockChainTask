@@ -5,16 +5,17 @@ var err = "";
 var err_
  var height = 0;
  var last_timestamp = 0;
+ 
  var rfid_codes = {
-    "carwash": "5b36312c203139322c2033392c2039382c203138345d",
-    "parking": "",
-    "toll": "",
-    "uber": ""
+    "carwash": "5b3231342c2036392c2033342c203132362c203230375d",//4
+    "parking": "5b36312c2032362c2037352c203131342c2033305d", //3 
+    "toll": "5b36312c203139322c2033392c2039382c203138345d",//2
+    "uber": "5b38362c2039302c2033382c203132362c2038345d"//1
  }
 
 $(document).ready(function() {
-	//getBalance();
-    callMainData();//toggleParking();
+	getBalance();
+    //callMainData();//toggleParking();
 });
 
 function callMainData() {
@@ -23,7 +24,7 @@ function callMainData() {
 		"enrollSecret" : "dfb03c0214"
 	};
 	var data_json = JSON.stringify(data);
-
+	
 	$.ajax({
 		url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/registrar",
 		type: 'post',
@@ -31,7 +32,6 @@ function callMainData() {
 		data: data_json,
 		async: false,
 		success: function (result) {
-			getBalance();
 			getTollPrice();
 			getTollBalance();
 			getCWBalance();
@@ -42,6 +42,7 @@ function callMainData() {
 			getParkingAvailability();
 			getUberBalance();
 			getUberPrice();
+			getBalance();
 		},
 		error: function(error){
 			alert("Unable to connect to chain code!");
@@ -76,6 +77,7 @@ function getBalance() {
     $.ajax({
         url: "https://1acda275b31041d89efd8a04b9bac2ea-vp0.us.blockchain.ibm.com:5004/chaincode",
         async:false,
+		cache:false,
         type: 'post',
         dataType: 'json',
         data: json_request,
@@ -158,8 +160,8 @@ function spend(sum,purpose) {
         dataType: 'json',
         data: json_request,
         success: function (result) {
-            location.reload();
-            //callMainData();
+            //location.reload();
+            callMainData();
         },
         error: function (error) {
             alert(error.statusText);
@@ -200,7 +202,8 @@ function earn(sum,source) {
         data: json_request,
         success: function (result) {
             alert("Enjoy they Ride!");
-            location.reload();
+            //location.reload();
+			callMainData();
         },
         error: function (error) {
             alert(error.statusText);
@@ -394,6 +397,7 @@ function payToll(amount) {
 
 function toll_collect(){
     if(err_ == "" && err == "") {
+			alert('Payıng toll tax');
         var km = $("#itm").val();
         var price = getTollPrice();
 
@@ -451,7 +455,7 @@ function display_data() {
     var bal = $("#bal").html();
 
     $.ajax({
-        url: "http://10.223.116.21:5000/lcd?line1=Car+balance%3A " + bal +"&line2=Available%3A ",
+        url: "http://10.223.116.20:5000/lcd?line1=Car+blc%3A " + bal +"&line2= ",
         type: 'get',
         success: function (result) {
             console.log("Hardware notified");
@@ -467,7 +471,7 @@ function pull_rfid(repeat) {
     console.log("Pulling rfid");
 
     $.ajax({
-        url: "http://10.223.116.21:5000/rfid/",
+        url: "http://10.223.116.20:5000/rfid/",
         type: 'get',
         success: function (result) {
             process_rfid(result);
@@ -583,6 +587,7 @@ function getCWAvailability() {
 			}
 			else {
 			    err_ = "Car is under washing station";
+				$('#wash_toggle-trigger').bootstrapToggle('enable');
 				$('#wash_toggle-trigger').bootstrapToggle('off');
 				console.log("wash status: full");
 				$('#wash_warningMsg_toggleOn').hide();
@@ -618,7 +623,9 @@ function getCWAvailability() {
 }
 
 function car_wash() {
+	
     if(err_ == "" && err == "") {
+			alert('Enterıng ın washıng statıon');
         var price = getCWPrice();
         var result_data = null;
         var request = {
@@ -818,6 +825,7 @@ function getParkingAvailability() {
 				err = "";
 			}
 			else {
+				$('#park_toggle-trigger').bootstrapToggle('enable');
 				$('#park_toggle-trigger').bootstrapToggle('off');
 				console.log("park status: full");
 				err = "car is parked";
@@ -858,6 +866,7 @@ function getParkingAvailability() {
 
 function car_parking() {
     if(err == "" && err_=="") {
+		alert('Enterıng the parkıng lot');
         var price = getParkingPrice();
         var hours = $("#hrs").val();
         var amount = price * hours;

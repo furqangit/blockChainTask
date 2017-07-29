@@ -49,7 +49,7 @@
                     </div>
                     <span class="input-group-addon"><strong>$</strong></span>
                 </div>
-                <!--<div style="display: table; margin: 0 auto; padding-top:10px;">
+                <div style="display: table; margin: 0 auto; padding-top:20px;">
                     <button type="button" class="btn btn-success pull-right" id="btn_start" onclick="startDriving()">
                       <span class="glyphicon glyphicon-road"></span> Start Driving
                     </button>
@@ -60,28 +60,22 @@
                         var startDriving = function(){
                           $('#btn_stop').show();
                           $('#btn_start').hide();
-
-                            $('#btnCarPark').prop('disabled',false);
-                            $('#btnCarWash').prop('disabled',false);
-                        //  $('#mainContainer').show();
+                          $('#mainContainer').show();
                           callMainData();
                         };
                         var stopDriving = function(){
                           $('#btn_stop').hide();
                           $('#btn_start').show();
-                            $('#btnCarPark').prop('disabled',true);
-                            $('#btnCarWash').prop('disabled',true);
-                            location.reload();
-                         // $('#mainContainer').hide();
+                          $('#mainContainer').hide();
                         };
                     </script>
-                </div>-->
+                </div>
             </div>
             <div class="col-sm-4"></div>
         </div>
     </div>
     <!-- Main start-->
-    <div class="container-fluid" id="mainContainer" style="display: true;">
+    <div class="container-fluid" id="mainContainer" style="padding-top:20px; display: none;">
       <div class="col-md-12"><div class="row">
         <div class="col-md-10">
           <div class="row">
@@ -112,11 +106,6 @@
                                               <td id="avl">
                                                   <input type="checkbox" id="wash_toggle-trigger" checked data-toggle="toggle"
                                                          data-on="Free" data-off="Leave Station" data-onstyle="success" data-offstyle="danger">
-                                                  <script>
-                                                    $(function(){
-                                                     // $('#btnCarWash').prop('disabled', true);
-                                                    });
-                                                  </script>
                                               </td>
                                               <td id="cwBal"></td>
                                               <td id="cwPrc"></td>
@@ -125,19 +114,12 @@
                                         </table>
                                     </div>
                                     <form>
-                                      <button type="button" id="btnSendToScreen" onclick="wash_screen()" class="btn btn-primary">
-                                          <span class="glyphicon glyphicon-send"></span> Send data to screen
-                                      </button>
-                                      <button type="button" id="btnPullRfid" onclick="pull_rfid()" class="btn btn-primary">
-                                          <span class="glyphicon glyphicon-bell"></span> Pull data
-                                      </button>
+                                      
                                       <button type="button" id="btnCarWash" onclick="car_wash()" class="btn btn-primary pull-right">
                                           <span class="glyphicon glyphicon-refresh"></span> Wash Car
                                       </button>
                                     </form>
-                                    <hr></hr>
-                                    <a href="#" id="wash_warningMsg_toggleOn">* Please first switch the availability status for washing!</a>
-                                    <a href="#" id="wash_warningMsg_toggleOff">* Please wait for current car to finish!</a>
+                                   
                                 </div>
                             </div>
                         </div>
@@ -172,13 +154,6 @@
                                             <td id="prkAvl">
                                                 <input type="checkbox" id="park_toggle-trigger" checked data-toggle="toggle"
                                                     data-on="Free" data-off="Leave Parking" data-onstyle="success" data-offstyle="danger">
-                                                <script>
-                                                  $(function(){
-                                                      //getParkingAvailability();
-                                                  //  $('#btnCarPark').prop('disabled', true);
-                                                   // $('#hrs').prop('disabled', true);*/
-                                                  });
-                                                </script>
                                             </td>
                                             <td id="prkBal"></td>
                                           </tb>
@@ -192,9 +167,6 @@
                                     	<span class="glyphicon glyphicon-map-marker"></span> Park Car
                                     </button>
                                   </form>
-                                  <hr></hr>
-                                  <a href="#" id="park_warningMsg_toggleOn">* Please first switch the availability status for parking!</a>
-                                  <a href="#" id="park_warningMsg_toggleOff">* Please wait for current car to finish!</a>
                               </div>
                           </div>
                       </div>
